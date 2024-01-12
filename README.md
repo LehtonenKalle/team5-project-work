@@ -9,3 +9,9 @@
 ### Lauri
 
 ### Miika
+
+#### Colors
+- #007AC9
+- #FFFFFF
+- #F2F5F7
+- #333333
