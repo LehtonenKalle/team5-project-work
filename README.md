@@ -2,6 +2,8 @@
  
 ## About our website
 
+Our projeck work is going to be bus-schedule website.
+
 [Link to our layout](http://figma.com)
 
 ### Kalle
