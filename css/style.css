@@ -1,7 +1,46 @@
 /*
 Colors
-- #007AC9
-- #FFFFFF
-- #F2F5F7
-- #333333
+- #007AC9 (blue)
+- #FFFFFF (white)
+- #F2F5F7 (gray)
+- #333333 (black)
 */
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    background-color: #007AC9;
+    color: #FFFFFF;
+    padding: 20px;
+    align-items: center;
+}
+
+#logo {
+    flex: 1;
+    font-weight: bolder;
+}
+
+#navigation-bar {
+    flex: 2;
+}
+
+#navigation-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-item {
+    flex: 1;
+}
+
+#login {
+    color: #333333;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
