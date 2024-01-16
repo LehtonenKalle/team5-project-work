@@ -2,7 +2,7 @@
  
 ## About our website
 
-Our project work is going to be bus-schedule website.
+Our project work is going to be bus-schedule website. It is going to include pages for at least traveling, tickets, customer service and log in.
 
 [Link to our layout](http://figma.com)
 
@@ -12,8 +12,3 @@ Our project work is going to be bus-schedule website.
 
 ### Miika
 
-#### Colors
-- #007AC9
-- #FFFFFF
-- #F2F5F7
-- #333333
