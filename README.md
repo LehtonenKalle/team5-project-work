@@ -2,7 +2,7 @@
  
 ## About our website
 
-Our project work is going to be bus-schedule website. It is going to include pages for at least traveling, tickets, customer service and log in.
+Our project work is going to be bus-schedule website.
 
 [Link to our layout](http://figma.com)
 
