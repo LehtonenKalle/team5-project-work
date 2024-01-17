@@ -1,8 +1,8 @@
 /*
 Colors
-- #007AC9 (blue)
+- #00568F (blue)
 - #FFFFFF (white)
-- #F2F5F7 (gray)
+- #BFBFBF (gray)
 - #333333 (black)
 */
 
@@ -12,7 +12,7 @@ body {
 
 header {
     display: flex;
-    background-color: #007AC9;
+    background-color: #00568F;
     color: #FFFFFF;
     padding: 20px;
     align-items: center;
