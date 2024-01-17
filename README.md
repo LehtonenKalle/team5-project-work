@@ -7,7 +7,10 @@ Our project work is going to be a website for bus schedules and ticketing. This 
 [Link to our layout](http://figma.com)
 
 ### Kalle
+##### home page
 
 ### Lauri
+##### Ticket page
 
 ### Miika
+##### Login page
