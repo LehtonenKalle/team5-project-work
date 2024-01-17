@@ -14,3 +14,4 @@ Our project work is going to be a website for bus schedules and ticketing. This 
 
 ### Miika
 ##### Login page
+- Created login page with password validation
