@@ -1,0 +1,59 @@
+.title1, .title2, .tickethead, label, #LTicket, #RTicket{
+    font-weight: bold;
+}
+.title1{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 20px; 
+}
+.title2{
+    margin-left: 115px;
+}
+#sticket{
+    background-color: #BFBFBF;
+}
+.tickethead{
+    margin-left: 120px;
+    margin-top: 50px;
+}
+label{
+    margin-left: 130px;
+}
+.yt{
+    display: flex;
+}
+.lsection{
+    flex: 1;
+    margin-top: 400px;
+    text-align: left;
+    margin-left: 100px;
+}
+.rsection{
+    flex: 1;
+    margin-top: 400px;
+    text-align: right;
+    margin-right:100px;
+}
+.para1, .para2{
+    background-color: #BFBFBF;
+    padding: 5px;
+}
+.para1{
+    margin-right: 400px;
+}
+.para2{
+    margin-left: 400px;
+}
+.input-group{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+
+}
+#o1{
+    margin-left: 123px;
+    margin-right: 20px;
+}
+#o2{
+    margin-right: 700px;
+}
