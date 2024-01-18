@@ -3,46 +3,44 @@ Colors
 - #00568F (blue)
 - #FFFFFF (white)
 - #BFBFBF (gray)
-- #333333 (black)
+- #00000 (black)
+- #0081d7 (light-blue)
 Fonts
 - "Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 */
+
+html {
+    font-family: "Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
 
 body {
     margin: 0;
 }
 
-header {
-    display: flex;
-    background-color: #00568F;
-    color: #FFFFFF;
-    padding: 20px;
-    align-items: center;
-}
-
-#logo {
-    flex: 1;
-    font-weight: bolder;
-}
-
-#navigation-bar {
-    flex: 2;
-}
-
-#navigation-list {
-    display: flex;
+.nav-list {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+    background-color: #00568F;
 }
 
-.nav-item {
-    flex: 1;
+li {
+    float: left;
 }
 
-#login {
-    color: #333333;
-    background-color: #FFFFFF;
-    padding: 10px;
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #0081d7;
+}
+
+.active {
+    background-color: #0081d7;
 }
