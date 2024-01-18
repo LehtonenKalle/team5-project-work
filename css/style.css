@@ -41,6 +41,20 @@ li a:hover:not(.active) {
     background-color: #0081d7;
 }
 
+#login {
+    float: right;
+}
+
 .active {
     background-color: #0081d7;
+}
+
+@media (max-width: 665px) {
+    li {
+        float: none;
+    }
+
+    #login {
+        float: none;
+    }
 }
