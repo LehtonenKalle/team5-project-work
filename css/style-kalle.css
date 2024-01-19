@@ -2,20 +2,24 @@ h1 {
     font-weight: bold;
     text-align: center;
     margin-top: 150px;
+    color: #000000;
 }
 
 h2 {
     font-weight: bold;
     text-align: center;
+}
 
-    background-color: #00568F;
+#route-box h2 {
+    font-weight: bold;
+    text-align: center;
+
     color: #FFFFFF;
 }
 
-.route-box {
+#route-box {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     margin: auto;
     margin-top: 100px;
@@ -24,35 +28,62 @@ h2 {
     width: 75%;
     background-color: #00568F;
     
+    border-radius: 30px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .header-and-input {
-    width: 45%;
-}
-
-#header-and-date {
-    margin: auto;
-
-    margin-top: 30px;
-}
-
-#header-and-date h2 {
-    font-size: 24px;
+    width: 30%;
 }
 
 .form-control {
     margin-top: 30px;
 
     border: 2px solid #00568F;
+
+    flex: 1;
 }
 
-#date {
-    margin-top: 20px;
+#news-heading {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+    color: #000000;
 }
 
-@media (max-width: 665px) {
-    .route-box {
+#news-box {
+    width: 75%;
+    height: 500px;
+
+    margin: auto;
+    margin-top: 100px;
+
+    background-color: #BFBFBF;
+}
+
+@media (max-width: 778px) {
+    #route-box {
         width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 590px) {
+    #route-box {
+        flex-direction: column;
+
+        padding-top: 0;
+    }
+
+    .header-and-input {
+        width: 100%;
+        margin-left: auto;
+
+        margin-top: 40px;
+    }
+
+
+    .form-control {
+       margin-top: 10px;
     }
 }
