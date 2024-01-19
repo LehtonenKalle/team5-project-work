@@ -12,6 +12,7 @@ Our project work is going to be a website for bus schedules and ticketing. This 
 
 ### Lauri
 ##### Ticket page
+- Created ticket page
 
 ### Miika
 ##### Login page
