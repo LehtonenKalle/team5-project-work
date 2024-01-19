@@ -15,12 +15,13 @@ h2 {
 .route-box {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     margin: auto;
     margin-top: 100px;
     padding: 50px;
 
-    width: 80%;
+    width: 75%;
     background-color: #00568F;
     
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -30,8 +31,28 @@ h2 {
     width: 45%;
 }
 
+#header-and-date {
+    margin: auto;
+
+    margin-top: 30px;
+}
+
+#header-and-date h2 {
+    font-size: 24px;
+}
+
 .form-control {
     margin-top: 30px;
 
     border: 2px solid #00568F;
+}
+
+#date {
+    margin-top: 20px;
+}
+
+@media (max-width: 665px) {
+    .route-box {
+        width: 100%;
+    }
 }
