@@ -1,0 +1,37 @@
+h1 {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: center;
+
+    background-color: #00568F;
+    color: #FFFFFF;
+}
+
+.route-box {
+    display: flex;
+    justify-content: space-between;
+
+    margin: auto;
+    margin-top: 100px;
+    padding: 50px;
+
+    width: 80%;
+    background-color: #00568F;
+    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.header-and-input {
+    width: 45%;
+}
+
+.form-control {
+    margin-top: 30px;
+
+    border: 2px solid #00568F;
+}
