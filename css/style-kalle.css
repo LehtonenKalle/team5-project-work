@@ -52,13 +52,35 @@ h2 {
 }
 
 #news-box {
+    display: flex;
+    justify-content: space-between;
+
     width: 75%;
-    height: 500px;
 
     margin: auto;
     margin-top: 100px;
+    padding: 20px;
 
     background-color: #BFBFBF;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.img-thumbnail {
+    width: 100%;
+    height: auto;
+
+
+    background-color: #FFFFFF;
+}
+
+.article-preview {
+    width: 55%;
+    color: #000000;
 }
 
 @media (max-width: 778px) {
