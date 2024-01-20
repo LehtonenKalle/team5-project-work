@@ -1,57 +1,101 @@
 .title1, .title2, .tickethead, label, #LTicket, #RTicket{
     font-weight: bold;
 }
+
 .title1{
     margin-left: 45%;
     font-weight: bolder; 
 }
+
 .title2{
     margin-left: 13%;
     margin-top: 5%;
 }
+
 #sticket{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: auto;
-    padding: 50px;
-    width: 75%;
+    padding: 20px; 
+    width: 90%;
     background-color: #00568F;
 }
+
 .tickethead, .l1, .l2{
     text-align: center;
     color: #ffff;
 }
+
 .input-group{
-    display: flex;
-    justify-content: space-between;
-    width: auto;
+    display: block;
+    justify-content: space-evenly;
+    width: 30%; 
+    margin: auto;
 }
+
 .form-select{
-    margin-top: 30px;
+    margin-top: 5%; 
 }
+
 #o1, #o2{
     margin-right: 20%;
-    max-width: max-content;
-    min-width: min-content;
+    width: fit-content;
+    max-width: fit-content;
+    min-width: fit-content;
 }
+
 .yt{
     display: flex;
 }
+
 .lsection, .rsection{
     flex: 1;
     flex-flow: column;
     position: absolute;
     bottom: 15%;
 }
+
 .lsection{
     left: 15%;
 }
+
 .rsection{
     right: 15%;
 }
+
 @media (max-width: 665px){
-    .rsection, .lsection{
-        float: none;
+    .title1{
+        margin-left: 10%; 
+    }
+
+    .title2{
+        margin-left: 5%; 
+    }
+
+    #sticket{
+        padding: 20px; 
+        flex-direction: column; 
+    }
+
+    .input-group{
+        width: 90%; 
+    }
+
+    #o1, #o2{
+        margin-right: 0; 
+        width: 100%; 
+    }
+
+    .yt{
+        flex-direction: column; 
+    }
+
+    .lsection, .rsection{
+        width: 100%; 
+        position: relative; 
+        left: 0; 
+        right: 0; 
+        margin-top: 20px; 
     }
 }
