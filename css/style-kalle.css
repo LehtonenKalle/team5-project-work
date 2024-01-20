@@ -56,7 +56,7 @@ h2 {
     color: #000000;
 }
 
-#article-box {
+.article-box {
     display: flex;
     justify-content: space-between;
 
@@ -98,7 +98,7 @@ h2 {
 }
 
 @media (max-width: 900px) {
-    #article-box {
+    .article-box {
         flex-direction: column-reverse;
         align-items: center;
     }
