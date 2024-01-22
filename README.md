@@ -19,3 +19,5 @@ Our group project work is a website for bus schedules and ticketing. This means 
 ### Miika
 ##### Login page
 - Created login page with password validation
+- Created register page
+- Created customer service page
