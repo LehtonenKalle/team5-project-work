@@ -25,11 +25,11 @@ body {
     background-color: #00568F;
 }
 
-li {
+.nav-list li {
     float: left;
 }
 
-li a {
+.nav-list li a {
     display: block;
     color: white;
     text-align: center;
@@ -37,7 +37,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.nav-list li a:hover:not(.active) {
     background-color: #0081d7;
 }
 
@@ -50,7 +50,7 @@ li a:hover:not(.active) {
 }
 
 @media (max-width: 665px) {
-    li {
+    .nav-list li {
         float: none;
     }
 
