@@ -12,11 +12,14 @@ h1 {
     margin: auto;
     margin-top: 100px;
     width: 75%;
-    padding: 20px;
+    padding: 30px;
+
+    border-radius: 15px;
 }
 
 #travelling-section h2 {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 #groups-container {
@@ -24,11 +27,38 @@ h1 {
     justify-content: space-around;
 }
 
+#groups-container a {
+    text-decoration: none;
+}
+
+#groups-container a:hover {
+    background-color: #0081d7;  
+}
+
 .group {
-    border: #FFFFFF 2px solid;
+    background-color: #00568F;
+    color: #FFFFFF;
+
     width: 20%;
+    border: white solid 5px;
 }
 
 .group h3 {
     text-align: center;
+}
+
+.group span {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 590px) {
+    #groups-container {
+        flex-direction: column;
+    }
+
+    .group {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
