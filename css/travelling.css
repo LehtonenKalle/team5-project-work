@@ -53,6 +53,52 @@ h1 {
     justify-content: center;
 }
 
+#map-section {
+    margin-top: 150px;
+    background-color: #BFBFBF;
+    padding-top: 100px;
+
+    text-align: center;
+}
+
+#map-section h2{
+    padding: 20px;
+    background-color: #00568F;
+    color:#FFFFFF;
+}
+
+#map-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    background-color: #00568F;
+    padding: 30px;
+
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.form-control {
+    width: 45%;
+}
+
+.map {
+    width: 100%;
+    height: 500px;
+
+    margin-top: 30px;
+    
+    background-color: white;
+    padding: 2px;
+}
+
 @media (max-width: 590px) {
     #groups-container {
         flex-direction: column;
