@@ -1,0 +1,34 @@
+h1 {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+    color: #000000;
+}
+
+#travelling-section {
+    background-color: #00568F;
+    color: #FFFFFF;
+
+    margin: auto;
+    margin-top: 100px;
+    width: 75%;
+    padding: 20px;
+}
+
+#travelling-section h2 {
+    text-align: center;
+}
+
+#groups-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.group {
+    border: #FFFFFF 2px solid;
+    width: 20%;
+}
+
+.group h3 {
+    text-align: center;
+}
