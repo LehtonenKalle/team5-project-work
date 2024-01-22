@@ -4,7 +4,7 @@
 
 Our group project work is a website for bus schedules and ticketing. This means that the website will have different pages for observing various bus schedules and purchasing tickets accordingly. It will also include a customer service page and login page.
 
-[Link to our layout](https://www.figma.com/file/v8tQW8uHqlyJ0XslQQnIuK/Kalle-Lehtonen's-team-library?type=design&node-id=0%3A1&mode=design&t=SoRKhzCETjWDK9fd-1)
+[Link to our figma layout](https://www.figma.com/file/v8tQW8uHqlyJ0XslQQnIuK/Kalle-Lehtonen's-team-library?type=design&node-id=0%3A1&mode=design&t=SoRKhzCETjWDK9fd-1)
 
 ### Kalle
 - Created header for the web pages 
