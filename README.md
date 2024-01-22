@@ -14,6 +14,7 @@ Our group project work is a website for bus schedules and ticketing. This means 
 ### Lauri
 ##### Ticket page
 - Created ticket page
+- Created footer for the web pages
 
 ### Miika
 ##### Login page

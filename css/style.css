@@ -16,6 +16,16 @@ html {
 body {
     margin: 0;
 }
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #00568F;
+    color: #ffff;
+}
 
 .nav-list {
     list-style-type: none;
