@@ -10,6 +10,7 @@ Our group project work is a website for bus schedules and ticketing. This means 
 - Created header for the web pages 
 - Created header part in style.css
 - Created Home page (index.html)
+- Created home.css
 - Created Travelling page
 - Created travelling.css 
 
