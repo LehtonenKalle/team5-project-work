@@ -1,0 +1,40 @@
+h3{
+    margin-top: 20px;
+}
+
+input[type=text], textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00568F;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+input[type=submit]{
+    background-color: #00568F;
+    color: white;
+    padding: 5px 10px;
+}
+input[type=submit]:hover{
+    background-color: #023557;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;      
+    background-color: lightgray;
+    margin: auto;
+    width: 35%;
+    margin-top: 125px;
+    padding: 10px;
+    border: 3px #00568F;
+
+  }
+  .btn{
+      background-color: #00568F;
+      color: white;
+      margin-top: 5px;
+  }
+  .form-control{
+      border: 2px solid #00568F ;
+  }
