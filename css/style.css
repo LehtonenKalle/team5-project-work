@@ -17,14 +17,16 @@ body {
     margin: 0;
 }
 footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: fixed;
+    display: flex !important;
+    justify-content: space-evenly!important;
+    background-color: #00568F !important;
+    color: #ffff !important;
+    width: 100% !important;
+    margin-top: auto;
+}
+.f1{
+    position: absolute;
     bottom: 0;
-    width: 100%;
-    background-color: #00568F;
-    color: #ffff;
 }
 
 .nav-list {
