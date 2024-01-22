@@ -6,21 +6,21 @@ h1 {
     font-size: 40px;
 }
 
-#travelling-section {
+#groups-section {
     background-color: #00568F;
     color: #FFFFFF;
 
     margin: auto;
     margin-top: 100px;
     width: 75%;
-    padding: 30px;
+    padding: 40px;
 
     border-radius: 15px;
 }
 
-#travelling-section h2 {
+#groups-section h2 {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 #groups-container {
@@ -40,12 +40,14 @@ h1 {
     background-color: #00568F;
     color: #FFFFFF;
 
-    width: 20%;
+    width: 22%;
     border: white solid 5px;
 }
 
 .group h3 {
     text-align: center;
+
+    padding-top: 20px;
 }
 
 .group span {
@@ -56,7 +58,7 @@ h1 {
 #map-section {
     margin-top: 150px;
     background-color: #BFBFBF;
-    padding-top: 100px;
+    padding: 100px 0 100px 0;
 
     text-align: center;
 }
@@ -99,7 +101,23 @@ h1 {
     padding: 2px;
 }
 
+@media (max-width: 1100px) {
+    #groups-container {
+        flex-wrap: wrap;
+    }
+
+    .group {
+        width: 47%;
+        margin-bottom: 20px;
+    }
+}
+
 @media (max-width: 590px) {
+    #groups-section {
+        width: 100%;
+        border-radius: 0;
+    }
+
     #groups-container {
         flex-direction: column;
     }
@@ -107,5 +125,11 @@ h1 {
     .group {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    #map-container {
+        width: 100%;
+
+        border-radius: 0;
     }
 }
