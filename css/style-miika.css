@@ -18,23 +18,3 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #023557;
 }
-.form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;      
-    background-color: lightgray;
-    margin: auto;
-    width: 35%;
-    margin-top: 125px;
-    padding: 10px;
-    border: 3px #00568F;
-
-  }
-  .btn{
-      background-color: #00568F;
-      color: white;
-      margin-top: 5px;
-  }
-  .form-control{
-      border: 2px solid #00568F ;
-  }
