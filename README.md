@@ -7,17 +7,22 @@ Our group project work is a website for bus schedules and ticketing. This means 
 [Link to our layout](http://figma.com)
 
 ### Kalle
-- Created header for the web pages
+- Created header for the web pages 
+- Created header part in style.css
 - Created Home page (index.html)
-- Travelling Page (In Progress)
+- Created Travelling page
+- Created travelling.css 
+
 
 ### Lauri
-##### Ticket page
 - Created ticket page
+- Created ticket.css
 - Created footer for the web pages
+- Created footer part in style.css
 
 ### Miika
-##### Login page
 - Created login page with password validation
 - Created register page
+- Created login-register.css
 - Created customer service page
+- Created customerservice.css
