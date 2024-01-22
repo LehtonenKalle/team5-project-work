@@ -2,7 +2,7 @@
  
 ## About our website
 
-Our group project work is a website for bus schedules and ticketing. This means that the website will have fuctionality for observing various bus schedules and purchasing tickets accordingly. It will also include a customer service page and login page.
+Our group project work is a website for bus schedules and ticketing. This means that the website will have different pages for observing various bus schedules and purchasing tickets accordingly. It will also include a customer service page and login page.
 
 [Link to our layout](http://figma.com)
 
