@@ -1,10 +1,6 @@
-html {
-    font-family: "Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
 .title1, .title2, .tickethead, label, #LTicket, #RTicket{
     font-weight: bold;
 }
-
 .title1{
     margin-left: 45%;
     font-weight: bolder; 
@@ -23,6 +19,7 @@ html {
     padding: 20px; 
     width: 90%;
     background-color: #00568F;
+    border-radius: 25px;
 }
 
 .tickethead, .l1, .l2{
