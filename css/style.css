@@ -16,19 +16,23 @@ html {
 body {
     margin: 0;
 }
+main{
+    margin-bottom: 0 auto;
+}
 footer{
-    display: flex !important;
-    justify-content: space-evenly!important;
-    background-color: #00568F !important;
-    color: #ffff !important;
-    width: 100% !important;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #00568F;
+    color: #ffff;
+    width: 100%;
     margin-top: auto;
     padding-top: 32px;
 }
 .f1{
-    position: absolute;
-    bottom: 0;
+    bottom: 0 auto;
+    margin-top: auto;
 }
+
 
 .nav-list {
     list-style-type: none;
@@ -62,7 +66,7 @@ footer{
     background-color: #0081d7;
 }
 
-@media (max-width: 665px) {
+@media (max-width: 900px) {
     .nav-list li {
         float: none;
     }

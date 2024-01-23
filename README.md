@@ -20,6 +20,8 @@ Our group project work is a website for bus schedules and ticketing. This means 
 - Created ticket.css
 - Created footer for the web pages
 - Created footer part in style.css
+- Created privacy page
+- Created terms of use page
 
 ### Miika
 - Created login page with password validation
