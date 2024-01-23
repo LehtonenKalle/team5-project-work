@@ -14,9 +14,10 @@ h2 {
     text-align: center;
 }
 
-#route-box h2 {
+#route-box label {
+    font-size: 32px;
     font-weight: bold;
-    text-align: center;
+    
 
     color: #FFFFFF;
 }
