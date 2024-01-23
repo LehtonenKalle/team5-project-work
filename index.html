@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,24 +27,24 @@
     <main>
         <h1>Where would you like to go!? &#128652;</h1>
         <section id="route-box">
-            <div class="header-and-input">
-                <h2>From</h2>
-                <input type="text" class="form-control" placeholder="Starting location" data-np-intersection-state="observed">
-            </div>
-            <div class="header-and-input">
-                <h2>Date</h2>
-                <input type="datetime-local" class="form-control" data-np-intersection-state="observed">
-            </div>
-            <div class="header-and-input">
-                <h2>To</h2>
-                <input type="text" class="form-control" placeholder="Destination" data-np-intersection-state="observed">
-            </div>
+            <form class="header-and-input">
+                <label for="from">From</label>
+                <input type="text" id="from" class="form-control" placeholder="Starting location" data-np-intersection-state="observed">
+            </form>
+            <form class="header-and-input">
+                <label for="date">Date</label>
+                <input type="datetime-local" id="date" class="form-control" data-np-intersection-state="observed">
+            </form>
+            <form class="header-and-input">
+                <label for="to">To</label>
+                <input type="text" id="to" class="form-control" placeholder="Destination" data-np-intersection-state="observed">
+            </form>
         </section>
-        <div id="news-section">
+        <section id="news-section">
             <h2 id="news-heading">News</h2>
-            <section class="article-box">
+            <div class="article-box">
                 <div class="img-container">
-                    <img src="images/redbus.jpg" class="img-thumbnail" alt="img-thumbnail">
+                    <img src="images/redbus.jpg" class="img-thumbnail" alt="red bus in wilderness">
                 </div>
                 <article class="article-preview">
                     <h3>Article One</h3>
@@ -60,10 +60,10 @@
                     </p>
                     <button type="button" class="btn btn-secondary">Read More</button>
                 </article>
-            </section>
-            <section class="article-box">
+            </div>
+            <div class="article-box">
                 <div class="img-container">
-                    <img src="images/bus.jpg" class="img-thumbnail" alt="img-thumbnail">
+                    <img src="images/bus.jpg" class="img-thumbnail" alt="school bus">
                 </div>
                 <article class="article-preview">
                     <h3>Article Two</h3>
@@ -79,10 +79,10 @@
                     </p>
                     <button type="button" class="btn btn-secondary">Read More</button>
                 </article>
-            </section>
-            <section class="article-box">
+            </div>
+            <div class="article-box">
                 <div class="img-container">
-                    <img src="images/buswinter.jpg" class="img-thumbnail" alt="img-thumbnail">
+                    <img src="images/buswinter.jpg" class="img-thumbnail" alt="bus in winter">
                 </div>
                 <article class="article-preview">
                     <h3>Article Three</h3>
@@ -98,8 +98,8 @@
                     </p>
                     <button type="button" class="btn btn-secondary">Read More</button>
                 </article>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&#169; Copyright Trip Buddies</p>

@@ -9,6 +9,8 @@ Fonts
 - "Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 */
 
+/*For all pages*/
+
 html {
     font-family: "Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
@@ -16,9 +18,11 @@ html {
 body {
     margin: 0;
 }
+
 main{
     margin-bottom: 100px;
 }
+
 footer{
     display: flex;
     justify-content: space-evenly;
@@ -28,10 +32,12 @@ footer{
     margin-top: auto;
     padding-top: 32px;
 }
+
 footer * {
     text-decoration: none;
     color: #FFFFFF;
 }
+
 .f1{
     margin-top: auto;
 }
@@ -66,7 +72,7 @@ footer * {
 }
 
 .active {
-    background-color: #0081d7;
+    background-color: #0071bc;
 }
 
 @media (max-width: 900px) {

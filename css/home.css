@@ -14,9 +14,10 @@ h2 {
     text-align: center;
 }
 
-#route-box h2 {
+#route-box label {
+    font-size: 32px;
     font-weight: bold;
-    text-align: center;
+    
 
     color: #FFFFFF;
 }
@@ -25,8 +26,7 @@ h2 {
     display: flex;
     justify-content: space-between;
 
-    margin: auto;
-    margin-top: 100px;
+    margin: 100px auto 0 auto;
     padding: 50px;
 
     width: 75%;
@@ -50,13 +50,13 @@ h2 {
 #news-section {
     background-color: #BFBFBF;
     margin-top: 150px;
-    padding-bottom: 100px;
-    padding-top: 100px;
+    padding: 100px 0 100px 0;
 }
 
 #news-heading {
     font-weight: bold;
     text-align: center;
+
     background-color: #00568F;
     color: #FFFFFF;
     padding: 20px;
@@ -68,13 +68,11 @@ h2 {
 
     width: 75%;
 
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto 0 auto;
     padding: 20px;
 
     background-color: #FFFFFF;
     border-radius: 5px;
-
 }
 
 .article-box:hover {
