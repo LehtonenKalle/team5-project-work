@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 main{
-    margin-bottom: 0 auto;
+    margin-bottom: 0;
 }
 footer{
     display: flex;
