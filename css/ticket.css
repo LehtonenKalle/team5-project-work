@@ -73,7 +73,7 @@
     flex-direction: column;
 }
 
-@media (max-width: 665px){
+@media (max-width: 900px){
     .title1{
         margin-left: 10%; 
     }
