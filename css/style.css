@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 main{
-    margin-bottom: 0;
+    margin-bottom: 100px;
 }
 footer{
     display: flex;
@@ -27,6 +27,10 @@ footer{
     width: 100%;
     margin-top: auto;
     padding-top: 32px;
+}
+footer * {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 .f1{
     bottom: 0 auto;
