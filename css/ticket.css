@@ -67,6 +67,11 @@
 .rsection{
     right: 15%;
 }
+.content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 @media (max-width: 665px){
     .title1{
