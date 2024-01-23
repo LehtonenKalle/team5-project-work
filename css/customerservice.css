@@ -18,3 +18,7 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #023557;
 }
+
+main {
+    margin-top: 50px;
+}
