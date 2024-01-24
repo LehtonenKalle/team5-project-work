@@ -23,6 +23,8 @@ main{
     margin-bottom: 100px;
 }
 
+/* Lauri */
+
 footer{
     display: flex;
     justify-content: space-evenly;
@@ -42,6 +44,7 @@ footer * {
     margin-top: auto;
 }
 
+/* Kalle */
 
 .nav-list {
     list-style-type: none;
