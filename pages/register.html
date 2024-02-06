@@ -24,18 +24,18 @@
         </nav>
     </header>
 
-    <form class="form" action="action_page.php">
+    <form class="form" action="../php/register.php" method="POST" onsubmit="lahetaKayttaja(this); return false;">
         <div class="col-sm-8 col-sm-offset-3 login">
           <h1>Register Here</h1>
     
           <label for="email">Email:</label>
-          <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
+          <input type="email" class="form-control" placeholder="Enter Email" name="tunnus" id="email" required>
       
-          <label for="psw">Password:</label>
-          <input type="password" class="form-control" placeholder="Enter Password" name="psw" id="psw" required>
+          <label for="salasana">Password:</label>
+          <input type="password" class="form-control" placeholder="Enter Password" name="salasana" id="salasana" required>
       
-          <label for="psw-repeat">Repeat Password:</label>
-          <input type="password" class="form-control" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <label for="salasana-uudelleen">Repeat Password:</label>
+          <input type="password" class="form-control" placeholder="Repeat Password" name="salasana-uudelleen" id="salasana-uudelleen" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         
         </div>
         <button type="submit" class="btn">Register</button>
@@ -50,6 +50,38 @@
         <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
         <p><a href="../pages/privacy.html">Privacy</a></p>
     </footer>
+
+    <script>
+      // Funktio, joka lähettää käyttäjätiedot palvelimelle lomakkeen avulla
+      function lahetaKayttaja(lomake) {
+        // Luodaan uusi käyttäjäobjekti
+        var user = {
+          tunnus: lomake.tunnus.value,
+          salasana: lomake.salasana.value
+        };
+        // Muunnetaan käyttäjäobjekti JSON-muotoon
+        var jsonUser = JSON.stringify(user);
+      
+        // Luodaan uusi XMLHttpRequest-objekti, jolla tehdään HTTP-pyyntö
+        xmlhttp = new XMLHttpRequest();
+        // Määritetään funktio, joka suoritetaan aina, kun XMLHttpRequest-objektin tila muuttuu
+        xmlhttp.onreadystatechange = function() {
+          // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
+          if (this.readyState == 4 && this.status == 200) {
+            // Asetetaan vastauksen teksti elementtiin, jonka id on "result"
+            document.getElementById("result").innerHTML = this.responseText;
+          }
+        };
+        
+        // Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille
+        xmlhttp.open("POST", "../php/register.php", true);
+        // Asetetaan pyynnön otsikkoon sisällön tyyppi
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // Lähetetään käyttäjätiedot HTTP-pyynnön mukana palvelimelle
+        xmlhttp.send("user=" + jsonUser);
+      }
+      
+      </script>
     
 </body>
 </html>
