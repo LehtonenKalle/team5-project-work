@@ -9,16 +9,9 @@ if (!($user = tarkistaJson($json))) {
 }
 
 // Estetään mysqli:n raportointi indeksivirheistä
-mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-
-try {
-    // Yritetään muodostaa yhteys tietokantaan
-    $yhteys = mysqli_connect("", "", "", "");
-} catch (Exception $e) {
-    // Jos yhteyden muodostaminen epäonnistuu, tulostetaan virheilmoitus ja poistutaan
-    print "Yhteysvirhe";
-    exit;
-}
+// Yritetään muodostaa yhteys tietokantaan
+// Jos yhteyden muodostaminen epäonnistuu, tulostetaan virheilmoitus ja poistutaan
+include("../connect.php");
 
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
 $sql = "INSERT INTO rekisterointi (tunnus, salasana) VALUES (?, SHA2(?, 256))";
