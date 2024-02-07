@@ -4,8 +4,8 @@ include("../connect.php");
 // katsotaan onko lähetetty tietoa
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // otetaan data vastaan
-    $first_name = $_POST['firstname'];
-    $last_name = $_POST['lastname'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $comment = $_POST['comment'];
 
