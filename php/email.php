@@ -1,17 +1,5 @@
 <?php
-// yheteyden otto parametrit
-$servername = "";
-$username = "";
-$password = "";
-$database = "";
-
-// luodaan yhteys
-$yhteys = new mysqli($servername, $username, $password, $database);
-
-// tarkastetaan yhteys
-if ($yhteys->connect_error) {
-    die("Connection failed: " . $yhteys->connect_error);
-}
+include(connect);
 
 // katsotaan onko lähetetty tietoa
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comment'];
 
     // Syötetään tiedot tietokantaan
-    $sql = "INSERT INTO contact_entries (first_name, last_name, email, comment) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO palaute (first_name, last_name, email, comment) VALUES (?, ?, ?, ?)";
     
     // Bind parameters and execute the statement
     $stmt = $yhteys->prepare($sql);
