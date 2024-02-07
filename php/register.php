@@ -11,7 +11,7 @@ if (!($user = tarkistaJson($json))) {
 // Estetään mysqli:n raportointi indeksivirheistä
 // Yritetään muodostaa yhteys tietokantaan
 // Jos yhteyden muodostaminen epäonnistuu, tulostetaan virheilmoitus ja poistutaan
-include("../connect.php");
+include("connect.php");
 
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
 $sql = "INSERT INTO rekisterointi (email, salasana) VALUES (?, SHA2(?, 256))";
