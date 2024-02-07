@@ -1,5 +1,5 @@
 <?php
-include("../connect.php");
+include("connect.php");
 
 // katsotaan onko lähetetty tietoa
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
