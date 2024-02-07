@@ -24,7 +24,7 @@
         </nav>
     </header>
 
-    <form class="form" action="../php/register.php" method="POST" onsubmit="lahetaKayttaja(this); return false;">
+    <form class="form" action="../php/register.php" method="POST" onsubmit="lahetaRekisterointi(this); return false;">
         <div class="col-sm-8 col-sm-offset-3 login">
           <h1>Register Here</h1>
     
@@ -53,7 +53,7 @@
 
     <script>
       // Funktio, joka lähettää käyttäjätiedot palvelimelle lomakkeen avulla
-      function lahetaKayttaja(lomake) {
+      function lahetaRekisterointi(lomake) {
         // Luodaan uusi käyttäjäobjekti
         var user = {
           tunnus: lomake.tunnus.value,

@@ -21,7 +21,7 @@ try {
 }
 
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
-$sql = "INSERT INTO kayttaja (tunnus, salasana) VALUES (?, SHA2(?, 256))";
+$sql = "INSERT INTO rekisterointi (tunnus, salasana) VALUES (?, SHA2(?, 256))";
 
 try {
     // Valmistellaan SQL-lauseke tietokantaan
