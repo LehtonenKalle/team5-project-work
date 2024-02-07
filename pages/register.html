@@ -29,7 +29,7 @@
           <h1>Register Here</h1>
     
           <label for="email">Email:</label>
-          <input type="email" class="form-control" placeholder="Enter Email" name="tunnus" id="email" required>
+          <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
       
           <label for="salasana">Password:</label>
           <input type="password" class="form-control" placeholder="Enter Password" name="salasana" id="salasana" required>
@@ -56,7 +56,7 @@
       function lahetaRekisterointi(lomake) {
         // Luodaan uusi käyttäjäobjekti
         var user = {
-          tunnus: lomake.tunnus.value,
+          tunnus: lomake.email.value,
           salasana: lomake.salasana.value
         };
         // Muunnetaan käyttäjäobjekti JSON-muotoon
