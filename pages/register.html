@@ -70,6 +70,9 @@
           if (this.readyState == 4 && this.status == 200) {
             // Asetetaan vastauksen teksti elementtiin, jonka id on "result"
             document.getElementById("result").innerHTML = this.responseText;
+            // Ohjataan rekisteröitynyt asiakas login-sivulle
+            window.location.href = "login.html";
+
           }
         };
         
@@ -82,6 +85,10 @@
       }
       
       </script>
+
+  <p id="result">
+  Palaute tähän
+  </p>
     
 </body>
 </html>

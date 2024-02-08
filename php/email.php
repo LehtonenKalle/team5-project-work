@@ -3,6 +3,21 @@ include("connect.php");
 
 // katsotaan onko lähetetty tietoa
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // katsotaan onko tyhjää tietoa
+    $required_data = ['firstname', 'lastname', 'email', 'comment'];
+    $errors = array();
+    foreach ($required_data as $required){
+        if (empty($_POST[$required])){
+            $errors[] = "Puutteellista tietoa";
+        }
+    }
+    //jos on tyhjää
+    if (!empty($errors)){
+        foreach ($errors as $error){
+            print  $error . '<br>';
+        }
+        exit;
+    }
     // otetaan data vastaan
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -19,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Close statement
     $stmt->close();
-
+    header("Location:../index.html");
     exit();
 }
 
