@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Close statement
     $stmt->close();
-
+    header("Location:../index.html");
     exit();
 }
 
