@@ -1,14 +1,18 @@
 function sendUser(form) {
+  // Estetään lomakkeen lähettämisen oletustoiminta
+  // Eli lomakkeen lähettäminen ei aiheuta tietojen näkymistä url-osoitteessa 
+  event.preventDefault();
+
   var user = new Object();
   user.email = form.email.value;
-  user.password = form.pswd.value;
+  user.pswd = form.pswd.value;
   var jsonUser = JSON.stringify(user);
 
-  xmlhttp = new XMLHttpRequest();
+  var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if (this.responseText == "ok") {
-        window.location.assign("../index.html");
+        document.getElementById("result").innerHTML = "Logged in as " + user.email;
       }
       else {
         document.getElementById("result").innerHTML = this.responseText;

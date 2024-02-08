@@ -1,9 +1,9 @@
 <?php
 session_start();
-$json = isset($_POST["user"]) ? $_POST["User"] : "";
+$json = isset($_POST["user"]) ? $_POST["user"] : "";
 
 if (!($user = checkJson($json))) {
-  print "Check that everything is filled";
+  print "Check that everything is filled correctly";
   exit;
 }
 
@@ -24,7 +24,7 @@ try {
       $_SESSION["user"] = "$line->email";
       print "ok";
       exit;
-  }
+  } 
   //Suljetaan tietokantayhteys
   mysqli_close($yhteys);
   print $json;
@@ -39,10 +39,11 @@ function checkJson($json) {
     return false;
   }
 
-  $user = $json_decode($json, false);
+  $user = json_decode($json, false);
   if (empty($user->email) || empty($user->pswd)) {
     return false;
   }
 
   return $user;
 }
+?>
