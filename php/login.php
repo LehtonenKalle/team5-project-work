@@ -1,36 +1,48 @@
 <?php
-# Luetaan lomakkeelta tulleet tiedot ja katsotaan onko syötteet olemassa.
-if (!isset($_POST["email"])) {
-  $email = "";
-}
+session_start();
+$json = isset($_POST["user"]) ? $_POST["User"] : "";
 
-if (!isset($_POST["password"])) {
-  $password = "";
-}
-
-# Jos jompikumpi tai kumpikin tieto puuttuu, ohjataan pyyntö takaisin lomakkeelle.
-if (empty($email) || empty($password)) {
-  header("Location:../pages/login.html");
+if (!($user = checkJson($json))) {
+  print "Check that everything is filled";
   exit;
 }
 
-# Yritetään muodostaa yhteys tietokantaan.
-# Jos yhteys tietokantaan epäonnistuu tulostetaan ruudulle yhteysvirhe.html.
-include("connect.php")
+include("connect.php");
 
-//Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat muuttujille
-$sql = "select * from rekisterointi where email=? and password=?"
-
-//Valmistellaan sql-lause
-$stmt = mysqli_prepare($yhteys, $sql);
-//Sijoitetaan muuttujat oikeisiin paikkoihin
-mysqli_stmt_bind_param($stmt, 'ss', $email, $password);
-//Suoritetaan sql-lause
-mysqli_stmt_execute($stmt);
-//Suljetaan tietokantayhteys
-mysqli_close($yhteys);
-
-$tulos = mysqli_stmt_get_result($stmt);
-
-print $tulos
+$sql = "select * from rekisterointi where email = ? and salasana = SHA2(?, 256)";
+try {
+  //Valmistellaan sql-lause
+  $stmt = mysqli_prepare($yhteys, $sql);
+  //Sijoitetaan muuttujat oikeisiin paikkoihin
+  mysqli_stmt_bind_param($stmt, 'ss', $user->email, $user->pswd);
+  //Suoritetaan sql-lause
+  mysqli_stmt_execute($stmt);
+  //Koska luetaan prepared statementilla, result haetaan
+  //metodilla mysqli_stmt_get_result($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+  if ($line = mysqli_fetch_object($result)){
+      $_SESSION["user"] = "$line->email";
+      print "ok";
+      exit;
+  }
+  //Suljetaan tietokantayhteys
+  mysqli_close($yhteys);
+  print $json;
+} catch (Exception $e) {
+  print "Virhe!";
+}
 ?>
+
+<?php
+function checkJson($json) {
+  if (empty($json)) {
+    return false;
+  }
+
+  $user = $json_decode($json, false);
+  if (empty($user->email) || empty($user->pswd)) {
+    return false;
+  }
+
+  return $user;
+}
