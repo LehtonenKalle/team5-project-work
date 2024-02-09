@@ -3,7 +3,7 @@ session_start();
 $json = isset($_POST["user"]) ? $_POST["user"] : "";
 
 if (!($user = checkJson($json))) {
-  print "Check that everything is filled correctly";
+  print "There are empty fields.";
   exit;
 }
 
@@ -24,7 +24,9 @@ try {
       $_SESSION["user"] = "$line->user";
       print "ok";
       exit;
-  } 
+  } else {
+    print "Check that everything is filled correctly.";
+  }
   //Suljetaan tietokantayhteys
   mysqli_close($yhteys);
 } catch (Exception $e) {
