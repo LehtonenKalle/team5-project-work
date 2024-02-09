@@ -48,6 +48,9 @@
           <p>Already have an account? <a class="here" href="login.html">Sign in</a>.</p>
         </div>
       </form>
+      <p id="result">
+        Palaute tähän
+      </p>
       <footer>
         <p>&#169; Copyright Trip Buddies</p>
         <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
@@ -73,10 +76,12 @@
           // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
           if (this.readyState == 4 && this.status == 200) {
             // Asetetaan vastauksen teksti elementtiin, jonka id on "result"
-            document.getElementById("result").innerHTML = this.responseText;
-            // Ohjataan rekisteröitynyt asiakas login-sivulle
-            window.location.href = "login.html";
-
+            if (this.responseText == "Käyttäjätunnus tai sähköposti on jo käytössä") {
+                document.getElementById("result").innerHTML = this.responseText;
+            } else {
+              // Ohjataan rekisteröitynyt asiakas login-sivulle
+              window.location.href = "login.html";
+            }
           }
         };
         
@@ -89,10 +94,6 @@
       }
       
       </script>
-
-  <p id="result">
-  Palaute tähän
-  </p>
     
 </body>
 </html>
