@@ -14,13 +14,13 @@ if (!($user = tarkistaJson($json))) {
 include("connect.php");
 
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
-$sql = "INSERT INTO rekisterointi (email, salasana) VALUES (?, SHA2(?, 256))";
+$sql = "INSERT INTO kayttaja (email, salasana, tunnus) VALUES (?, SHA2(?, 256), ?)";
 
 try {
     // Valmistellaan SQL-lauseke tietokantaan
     $stmt = mysqli_prepare($yhteys, $sql);
     // Sitoudutaan muuttujien arvot SQL-lausekkeeseen
-    mysqli_stmt_bind_param($stmt, 'ss', $user->email, $user->salasana);
+    mysqli_stmt_bind_param($stmt, 'sss', $user->email, $user->salasana, $user->tunnus);
     // Suoritetaan SQL-lauseke
     mysqli_stmt_execute($stmt);
     // Suljetaan tietokantayhteys
@@ -38,12 +38,13 @@ try {
 function tarkistaJson($json) {
     // Jos JSON-data on tyhjä, palautetaan false
     if (empty($json)) {
+        print("empty json");
         return false;
     }
     // Muunnetaan JSON-data PHP-objektiksi
     $user = json_decode($json, false);
-    // Tarkistetaan, että tunnus ja salasana eivät ole tyhjiä
-    if (empty($user->email) || empty($user->salasana)) {
+    // Tarkistetaan, että tunnus, s-posti tai salasana eivät ole tyhjiä
+    if (empty($user->email) || empty($user->salasana) || empty($user->tunnus)) {
         return false;
     }
     // Palautetaan käyttäjäobjekti

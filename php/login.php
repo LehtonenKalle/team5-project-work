@@ -9,25 +9,24 @@ if (!($user = checkJson($json))) {
 
 include("connect.php");
 
-$sql = "select * from rekisterointi where email = ? and salasana = SHA2(?, 256)";
+$sql = "select * from kayttaja where tunnus = ? and salasana = SHA2(?, 256)";
 try {
   //Valmistellaan sql-lause
   $stmt = mysqli_prepare($yhteys, $sql);
   //Sijoitetaan muuttujat oikeisiin paikkoihin
-  mysqli_stmt_bind_param($stmt, 'ss', $user->email, $user->pswd);
+  mysqli_stmt_bind_param($stmt, 'ss', $user->tunnus, $user->pswd);
   //Suoritetaan sql-lause
   mysqli_stmt_execute($stmt);
   //Koska luetaan prepared statementilla, result haetaan
   //metodilla mysqli_stmt_get_result($stmt);
   $result = mysqli_stmt_get_result($stmt);
   if ($line = mysqli_fetch_object($result)){
-      $_SESSION["user"] = "$line->email";
+      $_SESSION["user"] = "$line->user";
       print "ok";
       exit;
   } 
   //Suljetaan tietokantayhteys
   mysqli_close($yhteys);
-  print $json;
 } catch (Exception $e) {
   print "Virhe!";
 }
@@ -40,7 +39,7 @@ function checkJson($json) {
   }
 
   $user = json_decode($json, false);
-  if (empty($user->email) || empty($user->pswd)) {
+  if (empty($user->tunnus) || empty($user->pswd)) {
     return false;
   }
 

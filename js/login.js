@@ -4,7 +4,7 @@ function sendUser(form) {
   event.preventDefault();
 
   var user = new Object();
-  user.email = form.email.value;
+  user.tunnus = form.tunnus.value;
   user.pswd = form.pswd.value;
   var jsonUser = JSON.stringify(user);
 
@@ -12,7 +12,7 @@ function sendUser(form) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if (this.responseText == "ok") {
-        document.getElementById("result").innerHTML = "Logged in as " + user.email;
+        document.getElementById("result").innerHTML = "Logged in as " + user.tunnus;
       }
       else {
         document.getElementById("result").innerHTML = this.responseText;
