@@ -17,10 +17,12 @@ $check = "SELECT tunnus, email FROM kayttaja WHERE tunnus = ? OR email = ?";
 $stmt = mysqli_prepare($yhteys, $check);
 mysqli_stmt_bind_param($stmt, 'ss', $user->tunnus, $user->email);
 mysqli_stmt_execute($stmt);
-$mysqli_stmt = mysqli_stmt_store_result($stmt);
+
+mysqli_stmt_store_result($stmt);
+$rows = mysqli_stmt_num_rows($stmt);
 
 // Jos löytyy tuloksia, käyttäjätunnus tai sähköposti on jo käytössä
-if ($mysqli_stmt == true) {
+if ($rows > 0) {
     print "Error";
     exit;
 } 
