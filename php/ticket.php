@@ -33,7 +33,7 @@ if(isset($_SESSION["user"])) {
     header("Location:../pages/ticket.html");
     exit();
 }
-}else{
+} else {
     // Jos käyttäjä ei ole kirjautunut sisään, ohjaa takaisin kirjautumissivulle
     header("Location:../pages/login.html");
     exit();
