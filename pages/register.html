@@ -31,6 +31,9 @@
           <label for="email">Email:</label>
           <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
       
+          <label for="tunnus">Username:</label>
+          <input type="text" class="form-control" placeholder="Enter Username" name="tunnus" id="tunnus" required>
+
           <label for="salasana">Password:</label>
           <input type="password" class="form-control" placeholder="Enter Password" name="salasana" id="salasana" required>
       
@@ -57,6 +60,7 @@
         // Luodaan uusi käyttäjäobjekti
         var user = {
           email: lomake.email.value,
+          tunnus: lomake.tunnnus.value,
           salasana: lomake.salasana.value
         };
         // Muunnetaan käyttäjäobjekti JSON-muotoon
