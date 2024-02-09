@@ -76,7 +76,7 @@
           // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
           if (this.readyState == 4 && this.status == 200) {
             // Asetetaan vastauksen teksti elementtiin, jonka id on "result"
-            if (this.responseText == "Käyttäjätunnus tai sähköposti on jo käytössä") {
+            if (this.responseText === "Error") {
                 document.getElementById("result").innerHTML = this.responseText;
             } else {
               // Ohjataan rekisteröitynyt asiakas login-sivulle

@@ -4,7 +4,7 @@ $json = isset($_POST["user"]) ? $_POST["user"] : "";
 
 // Tarkistetaan, että JSON-datasta on saatu tarvittavat käyttäjätiedot
 if (!($user = tarkistaJson($json))) {
-    print "Täytä kaikki kentät";
+    print "Fill all fields";
     exit;
 }
 
@@ -20,10 +20,10 @@ mysqli_stmt_execute($stmt);
 $mysqli_stmt = mysqli_stmt_store_result($stmt);
 
 // Jos löytyy tuloksia, käyttäjätunnus tai sähköposti on jo käytössä
-if ($mysqli_stmt > 0) {
-    print "Käyttäjätunnus tai sähköposti on jo käytössä";
+if ($mysqli_stmt == true) {
+    print "Error";
     exit;
-}
+} 
 
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
 $sql = "INSERT INTO kayttaja (email, salasana, tunnus) VALUES (?, SHA2(?, 256), ?)";
@@ -38,7 +38,7 @@ try {
     // Suljetaan tietokantayhteys
     mysqli_close($yhteys);
     // Tulostetaan lisätty JSON-data
-    print $json;
+    print "$json";
 } catch (Exception $e) {
     // Jos käyttäjätunnus on jo olemassa, tulostetaan virheilmoitus
     print "Tunnus jo olemassa";
