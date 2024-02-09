@@ -12,7 +12,7 @@ function sendUser(form) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if (this.responseText == "ok") {
-        document.getElementById("result").innerHTML = "Logged in as " + user.tunnus;
+        document.getElementById("login-text").innerHTML = user.tunnus;
       }
       else {
         document.getElementById("result").innerHTML = this.responseText;
