@@ -40,7 +40,7 @@
 }
 
 #o1, #o2{
-    margin-right: 20%;
+    margin-right: 160px;
     width: fit-content;
     max-width: fit-content;
     min-width: fit-content;
@@ -71,6 +71,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+form{
+    display: flex;
 }
 
 @media (max-width: 1100px){
