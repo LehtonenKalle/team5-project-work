@@ -33,6 +33,7 @@ footer{
     width: 100%;
     margin-top: auto;
     padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 footer * {
@@ -75,7 +76,7 @@ footer * {
 }
 
 .active {
-    background-color: #0071bc;
+    background-color: #0081d7;
 }
 
 @media (max-width: 900px) {

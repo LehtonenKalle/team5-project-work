@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -21,12 +24,25 @@
                 <li><a href="pages/travelling.html">Travelling</a></li>
                 <li><a href="pages/ticket.html">Tickets</a></li>
                 <li><a href="pages/customerservice.html">Customer Service</a></li>
-                <li id="login"><a class="active" href="pages/login.html">Log in</a></li>
+                <li id="login">
+                    <?php 
+                    if (isset($_SESSION["tunnus"])) {
+                        print "<a class='active' href='pages/login.html'>".$_SESSION["tunnus"]."</a>";
+                    } else {
+                        print "<a class='active' href='pages/login.html'>Log in</a>";
+                    }
+                    ?>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Where would you like to go!? &#128652;</h1>
+        <?php
+        if (isset($_SESSION["tunnus"])) {
+            print "<h1>Welcome ".$_SESSION["tunnus"]."!</h1>";
+        } 
+        ?>
+        <h1>Where would you like to go? &#128652;</h1>
         <section id="route-box">
             <form class="header-and-input">
                 <label for="from">From</label>

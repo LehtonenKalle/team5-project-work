@@ -12,7 +12,7 @@ function sendUser(form) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if (this.responseText == "ok") {
-        window.location.assign("../php/welcome.php");
+        window.location.assign("../index.php");
       }
       else {
         document.getElementById("result").innerHTML = this.responseText;
