@@ -3,6 +3,7 @@ function sendUser(form) {
   // Eli lomakkeen lähettäminen ei aiheuta tietojen näkymistä url-osoitteessa 
   event.preventDefault();
 
+  // Tehdään user-olio, johon tallennetaan lomakkeelta saadut tiedot muuttujiin
   var user = new Object();
   user.tunnus = form.tunnus.value;
   user.pswd = form.pswd.value;
