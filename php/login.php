@@ -30,7 +30,7 @@ try {
   //Suljetaan tietokantayhteys
   mysqli_close($yhteys);
 } catch (Exception $e) {
-  print "Virhe!";
+  print "Error!";
 }
 ?>
 

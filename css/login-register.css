@@ -1,14 +1,12 @@
 .form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;      
+    display: flex;  
     background-color: lightgray;
     margin: 15% auto;
     width: 40%;
     padding: 20px;
     border: 3px solid #00568F;
     box-sizing: border-box;
-
+    align-items: center;
   }
   h1 {
     margin-bottom: 20px;

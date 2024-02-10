@@ -13,20 +13,6 @@ if (!($user = tarkistaJson($json))) {
 // Jos yhteyden muodostaminen epäonnistuu, tulostetaan virheilmoitus ja poistutaan
 include("connect.php");
 
-$check = "SELECT tunnus, email FROM kayttaja WHERE tunnus = ? OR email = ?";
-$stmt = mysqli_prepare($yhteys, $check);
-mysqli_stmt_bind_param($stmt, 'ss', $user->tunnus, $user->email);
-mysqli_stmt_execute($stmt);
-
-mysqli_stmt_store_result($stmt);
-$rows = mysqli_stmt_num_rows($stmt);
-
-// Jos löytyy tuloksia, käyttäjätunnus tai sähköposti on jo käytössä
-if ($rows > 0) {
-    print "Error";
-    exit;
-} 
-
 // Valmistellaan SQL-lauseke, jossa kysymysmerkit osoittavat paikat, joihin laitetaan muuttujien arvoja
 $sql = "INSERT INTO kayttaja (email, salasana, tunnus) VALUES (?, SHA2(?, 256), ?)";
 
@@ -40,10 +26,10 @@ try {
     // Suljetaan tietokantayhteys
     mysqli_close($yhteys);
     // Tulostetaan lisätty JSON-data
-    print "$json";
+    print "Success";
 } catch (Exception $e) {
     // Jos käyttäjätunnus on jo olemassa, tulostetaan virheilmoitus
-    print "Tunnus jo olemassa";
+    print "Username or email address is already in use.";
 }
 ?>
 
