@@ -1,12 +1,20 @@
 .form{
-    display: flex;  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;      
     background-color: lightgray;
     margin: 15% auto;
     width: 40%;
     padding: 20px;
     border: 3px solid #00568F;
     box-sizing: border-box;
-    align-items: center;
+
+  }
+  .form * {
+    width: 100%;
+  }
+  #result {
+    text-decoration:  underline dotted #00568F;
   }
   h1 {
     margin-bottom: 20px;
@@ -33,6 +41,7 @@
       margin-bottom: 10px;
   }
   .form-check-input {
+    width: 18px;
   }
   @media (max-width: 600px){
     .form{
