@@ -59,24 +59,61 @@ footer * {
     float: left;
 }
 
-.nav-list li a {
+.dropdown-content a {
+    color: #333333;
+}
+
+.nav-link {
     display: block;
-    color: white;
+    color: #FFFFFF;
     text-align: center;
     padding: 14px 30px;
     text-decoration: none;
 }
 
-.nav-list li a:hover:not(.active) {
+.nav-link:hover:not(.active) {
     background-color: #0081d7;
+    color: #FFFFFF;
 }
 
 #login {
     float: right;
+    align-items: center;
 }
 
-.active {
+#login:hover .dropdown-content {
+    display: block;
+}
+
+#login-link {
     background-color: #0081d7;
+}
+
+.dropdown-btn {
+    background-color: #0081d7;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;   
+}
+
+.dropdown-content a {
+    display: block;
+    color: #333333;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
 
 @media (max-width: 900px) {

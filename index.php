@@ -20,16 +20,20 @@ session_start();
     <header>
         <nav class="nav-bar">
             <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pages/travelling.html">Travelling</a></li>
-                <li><a href="pages/ticket.html">Tickets</a></li>
-                <li><a href="pages/customerservice.html">Customer Service</a></li>
+                <li><a class="nav-link" href="index.php">Home</a></li>
+                <li><a class="nav-link" href="pages/travelling.html">Travelling</a></li>
+                <li><a class="nav-link" href="pages/ticket.html">Tickets</a></li>
+                <li><a class="nav-link" href="pages/customerservice.html">Customer Service</a></li>
                 <li id="login">
                     <?php 
                     if (isset($_SESSION["tunnus"])) {
-                        print "<a class='active' href='pages/login.html'>".$_SESSION["tunnus"]."</a>";
+                        print "<button class='dropdown-btn' href='pages/login.html'>".$_SESSION["tunnus"]."</button>". 
+                        "<div class='dropdown-content'>
+                            <a href='#'>Profile</a>
+                            <a href='php/logout.php'>Log out</a>
+                        </div>";
                     } else {
-                        print "<a class='active' href='pages/login.html'>Log in</a>";
+                        print "<a class='nav-link' id='login-link' href='pages/login.php'>Log in</a>";
                     }
                     ?>
                 </li>
