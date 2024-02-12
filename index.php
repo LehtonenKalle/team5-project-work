@@ -29,7 +29,7 @@ session_start();
                     if (isset($_SESSION["tunnus"])) {
                         print "<button class='dropdown-btn' href='pages/login.html'>".$_SESSION["tunnus"]."</button>". 
                         "<div class='dropdown-content'>
-                            <a href='#'>Profile</a>
+                            <a href='pages/profile.php'>Profile</a>
                             <a href='php/logout.php'>Log out</a>
                         </div>";
                     } else {
