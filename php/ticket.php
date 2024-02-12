@@ -26,7 +26,7 @@ if(isset($_SESSION["user"])) {
         $stmt->execute();
 
         // Ohjataan käyttäjä takaisin kotisivulle
-        header("Location:../index.html");
+        header("Location:../index.php");
         exit();
 } else {
     // Jos lomakkeelta puuttuu tietoja, ohjaa takaisin lippusivulle
@@ -35,7 +35,7 @@ if(isset($_SESSION["user"])) {
 }
 } else {
     // Jos käyttäjä ei ole kirjautunut sisään, ohjaa takaisin kirjautumissivulle
-    header("Location:../pages/login.html");
+    header("Location:../pages/login.php");
     exit();
 }
 ?>
