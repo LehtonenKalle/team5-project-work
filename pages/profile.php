@@ -6,6 +6,7 @@ session_start();
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/profile.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="Trip Buddies Register page">
     <meta name="author" content="Miika Konttila">
@@ -13,65 +14,11 @@ session_start();
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login-register.css">
     <title>Trip Buddies - Change Account Details</title>
-    <script>
-    // Funktio, joka lähettää käyttäjätiedot palvelimelle lomakkeen avulla
-    function sendChanges(form, id) {
-
-    event.preventDefault;
-
-    
-    // Luodaan uusi käyttäjäobjekti
-    var user = {
-        email: form.email.value,
-        tunnus: form.tunnus.value,
-        id: id
-    };
-    // Muunnetaan käyttäjäobjekti JSON-muotoon
-    var jsonUser = JSON.stringify(user);
-
-    // Luodaan uusi XMLHttpRequest-objekti, jolla tehdään HTTP-pyyntö
-    xmlhttp = new XMLHttpRequest();
-    // Määritetään funktio, joka suoritetaan aina, kun XMLHttpRequest-objektin tila muuttuu
-    xmlhttp.onreadystatechange = function() {
-    // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
-    if (this.readyState == 4 && this.status == 200) {
-        window.location.assign("profile.php");
-    } 
-    };
-    // Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille
-    xmlhttp.open("POST", "../php/edit.php", true);
-    // Asetetaan pyynnön otsikkoon sisällön tyyppi
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // Lähetetään käyttäjätiedot HTTP-pyynnön mukana palvelimelle
-    xmlhttp.send("user=" + jsonUser);
-    }
-
-</script>
 </head>
 <body>
-<header>
-    <nav class="nav-bar">
-        <ul class="nav-list">
-            <li><a class="nav-link" href="../index.php">Home</a></li>
-            <li><a class="nav-link" href="travelling.html">Travelling</a></li>
-            <li><a class="nav-link" href="ticket.html">Tickets</a></li>
-            <li><a class="nav-link" href="customerservice.html">Customer Service</a></li>
-            <li id="login">
-                <?php 
-                if (isset($_SESSION["tunnus"])) {
-                    print "<button class='dropdown-btn' href='login.php'>".$_SESSION["tunnus"]."</button>". 
-                    "<div class='dropdown-content'>
-                        <a href='php/login.php'>Profile</a>
-                        <a href='php/logout.php'>Log out</a>
-                    </div>";
-                } else {
-                    print "<a class='nav-link' id='login-link' href='login.php'>Log in</a>";
-                }
-                ?>
-            </li>
-        </ul>
-    </nav>
-</header>
+<?php
+include("../parts/header.php");
+?>
 <?php 
 include("../php/connect.php");
 
@@ -102,11 +49,11 @@ print "
 mysqli_close($yhteys);
 ?>
 
-<!-- <footer>
+<footer>
     <p>&#169; Copyright Trip Buddies</p>
     <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
     <p><a href="../pages/privacy.html">Privacy</a></p>
-</footer> -->
+</footer>
     
 </body>
 </html>

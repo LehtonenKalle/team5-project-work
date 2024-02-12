@@ -17,7 +17,7 @@ xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     if (this.responseText.trim() === "Success") { 
       // Ohjataan rekisteröitynyt asiakas login-sivulle
-      window.location.href = "login.php";
+      window.location.href = "../pages/login.php";
     } else {
       // Asetetaan vastauksen teksti elementtiin, jonka id on "result", 
       document.getElementById("result").innerHTML = this.responseText;
