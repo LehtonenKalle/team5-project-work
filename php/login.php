@@ -22,7 +22,8 @@ try {
   $result = mysqli_stmt_get_result($stmt);
   if ($row = mysqli_fetch_object($result)){
       $_SESSION["tunnus"] = "$row->tunnus";
-      print "ok";
+      $_SESSION["email"] = "$row->email";
+       print "ok";
       exit;
   } else {
     print "Check that everything is filled correctly.";
