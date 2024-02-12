@@ -21,7 +21,7 @@ try {
   //metodilla mysqli_stmt_get_result($stmt);
   $result = mysqli_stmt_get_result($stmt);
   if ($line = mysqli_fetch_object($result)){
-      $_SESSION["tunnus"] = "$line->tunnus";
+      $_SESSION["user"] = "$line->user";
       print "ok";
       exit;
   } else {
