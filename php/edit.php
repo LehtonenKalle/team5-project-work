@@ -25,7 +25,7 @@ try {
     // Suoritetaan SQL-lauseke
     mysqli_stmt_execute($stmt);
     // Tulostetaan lisätty JSON-data
-    print "Changes have been saved.";
+    print "ok";
 
     
     $_SESSION["id"] = $user->id;

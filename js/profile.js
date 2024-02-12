@@ -19,7 +19,11 @@ function sendChanges(form, id) {
   xmlhttp.onreadystatechange = function() {
     // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
     if (this.readyState == 4 && this.status == 200) {
-      window.location.assign("../pages/profile.php");
+      if (this.responseText.trim() == "ok") {
+        window.location.assign("../pages/profile.php");
+      } else {
+        document.getElementById("result").innerHTML = this.responseText;
+      }
     } 
   };
   // Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille
