@@ -20,8 +20,8 @@ try {
   //Koska luetaan prepared statementilla, result haetaan
   //metodilla mysqli_stmt_get_result($stmt);
   $result = mysqli_stmt_get_result($stmt);
-  if ($line = mysqli_fetch_object($result)){
-      $_SESSION["user"] = "$line->user";
+  if ($row = mysqli_fetch_object($result)){
+      $_SESSION["tunnus"] = "$row->tunnus";
       print "ok";
       exit;
   } else {

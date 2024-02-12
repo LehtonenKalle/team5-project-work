@@ -24,28 +24,28 @@
     </nav>
   </header>
 
-    <form class="form" action="../php/register.php" method="POST" onsubmit="lahetaRekisterointi(this); return false;">
-        <div class="col-sm-8 col-sm-offset-3 login">
-          <h1>Register Here</h1>
-          <p id="result"></p>
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
-      
-          <label for="tunnus">Username:</label>
-          <input type="text" class="form-control" placeholder="Enter Username" name="tunnus" id="tunnus" required>
+  <form class="form" action="../php/register.php" method="POST" onsubmit="lahetaRekisterointi(this); return false;">
+      <div class="col-sm-8 col-sm-offset-3 login">
+        <h1>Register Here</h1>
+        <p id="result"></p>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
+    
+        <label for="tunnus">Username:</label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="tunnus" id="tunnus" required>
 
-          <label for="salasana">Password:</label>
-          <input type="password" class="form-control" placeholder="Enter Password" name="salasana" id="salasana" required>
-      
-          <label for="salasana-uudelleen">Repeat Password:</label>
-          <input type="password" class="form-control" placeholder="Repeat Password" name="salasana-uudelleen" id="salasana-uudelleen" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-        </div>
-        <button type="submit" class="btn">Register</button>
-        <div class="container signin">
-          <p>Already have an account? <a class="here" href="login.php">Sign in</a>.</p>
-        </div>
-      </form>
-      <footer>
+        <label for="salasana">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter Password" name="salasana" id="salasana" required>
+    
+        <label for="salasana-uudelleen">Repeat Password:</label>
+        <input type="password" class="form-control" placeholder="Repeat Password" name="salasana-uudelleen" id="salasana-uudelleen" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <div class="container signin">
+        <p>Already have an account? <a class="here" href="login.php">Sign in</a>.</p>
+      </div>
+    </form>
+    <footer>
         <p>&#169; Copyright Trip Buddies</p>
         <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
         <p><a href="../pages/privacy.html">Privacy</a></p>
@@ -77,6 +77,7 @@
               document.getElementById("result").innerHTML = this.responseText;
             }
           }
+          
         };
         
         // Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille

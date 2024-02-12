@@ -22,7 +22,7 @@
             <li id="login">
                 <?php 
                 if (isset($_SESSION["tunnus"])) {
-                    print "<button class='dropdown-btn' href='login.php'>".$_SESSION["tunnus"]."</button>". 
+                    print "<button class='dropdown-btn' href='login.php'>".$_SESSION["user"]."</button>". 
                     "<div class='dropdown-content'>
                         <a href='php/login.php'>Profile</a>
                         <a href='php/logout.php'>Log out</a>

@@ -11,7 +11,7 @@ if(isset($_SESSION["user"])) {
         // Otetaan lomakkeen tiedot vastaan
         $customer_group = $_POST["customer_group"]; // Asiakasryhmä merkkijonona
         $zone = $_POST["zone"];
-        $user_email = $_SESSION["user"];
+        $user_email = $_SESSION["tunnus"];
 
         // Haetaan käyttäjän id tietokannasta
         $user_query = mysqli_query($yhteys, "SELECT id FROM kayttaja WHERE email = '$user_email'");
