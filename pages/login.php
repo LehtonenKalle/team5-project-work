@@ -38,6 +38,7 @@
     </header>
     <form class="form">
         <h1>Login Here</h1>
+        <p id="result"></p>
         <div class="col-sm-8 col-sm-offset-3 login">
             <label for="tunnus" class="form-label">Username:</label>
             <input type="text" class="form-control" id="tunnus" placeholder="Enter Username" name="tunnus">

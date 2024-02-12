@@ -21,9 +21,11 @@ try {
   //metodilla mysqli_stmt_get_result($stmt);
   $result = mysqli_stmt_get_result($stmt);
   if ($row = mysqli_fetch_object($result)){
+      $_SESSION["id"] = "$row->id";
       $_SESSION["tunnus"] = "$row->tunnus";
       $_SESSION["email"] = "$row->email";
-       print "ok";
+
+      print "ok";
       exit;
   } else {
     print "Check that everything is filled correctly.";
