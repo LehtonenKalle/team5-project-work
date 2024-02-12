@@ -37,7 +37,7 @@
         </nav>
     </header>
     <form class="form">
-        <h1>Login Here</h1>
+        <h1>Change account details</h1>
         <div class="col-sm-8 col-sm-offset-3 login">
             <label for="tunnus" class="form-label">Username:</label>
             <input type="text" class="form-control" id="tunnus" placeholder="Enter Username" name="tunnus">
