@@ -2,7 +2,7 @@
 session_start();
 
 // Tarkistetaan onko käyttäjä kirjautunut sisään
-if(isset($_SESSION["user"])) {
+if(isset($_SESSION["tunnus"])) {
     // Käyttäjä on kirjautunut sisään, tallennetaan lippu
     include("connect.php");
 
