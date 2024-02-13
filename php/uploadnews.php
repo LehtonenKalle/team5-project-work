@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Jatketaan jos kaikki on ok
     if ($uploadOk == 1) {
-        $image_url = 'uploads/' . uniqid() . '_' . $_FILES["image"]["name"];
+        $image_url = 'images/' . uniqid() . '_' . $_FILES["image"]["name"];
             // Laitetaan tiedosto tietokantaan
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $image_url)){
             
