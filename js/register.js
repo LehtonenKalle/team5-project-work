@@ -1,6 +1,8 @@
-// Funktio, joka lähettää käyttäjätiedot palvelimelle lomakkeen avulla
+// Määrittelee JavaScript-funktion lahetaRekisterointi, joka saa parametrinaan lomakkeen (form-elementin), 
+// josta käyttäjän tiedot haetaan.
 function lahetaRekisterointi(lomake) {
-// Luodaan uusi käyttäjäobjekti
+// Luo uuden JavaScript-objektin nimeltä user, johon tallennetaan käyttäjän syöttämät tiedot 
+// (sähköposti, käyttäjätunnus, salasana).
 var user = {
   email: lomake.email.value,
   tunnus: lomake.tunnus.value,
@@ -11,7 +13,8 @@ var jsonUser = JSON.stringify(user);
 
 // Luodaan uusi XMLHttpRequest-objekti, jolla tehdään HTTP-pyyntö
 xmlhttp = new XMLHttpRequest();
-// Määritetään funktio, joka suoritetaan aina, kun XMLHttpRequest-objektin tila muuttuu
+// Määrittelee funktion, joka suoritetaan aina, kun XMLHttpRequest-objektin tila muuttuu. 
+// Tämä funktio käsittelee vastauksen palvelimelta.
 xmlhttp.onreadystatechange = function() {
   // Tarkistetaan, onko pyyntö valmis (readyState 4) ja onko vastauksen statuskoodi 200 (OK)
   if (this.readyState == 4 && this.status == 200) {
@@ -26,7 +29,7 @@ xmlhttp.onreadystatechange = function() {
   
 };
 
-// Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille
+// Avataan uusi POST-tyyppinen HTTP-pyyntö määritetylle palvelimelle ja resurssille, jolla käyttäjän tiedot lähetetään.
 xmlhttp.open("POST", "../php/register.php", true);
 // Asetetaan pyynnön otsikkoon sisällön tyyppi
 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
