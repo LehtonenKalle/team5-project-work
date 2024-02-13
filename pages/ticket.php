@@ -59,15 +59,44 @@
             </form>
         </section>
         <div class="yt">
-        <section class="lsection">
-            <h2>Your tickets</h2>
-            <p class="para">You have not bought any tickets</p>
-        </section>
-        <section class="rsection">
-            <h2>Expired tickets</h2>
-            <p class="para">You have 0 expired tickets</p>
-        </section>
-        </div>
+    <section class="lsection">
+    <h2>Your tickets</h2>
+    <?php
+    include ("../php/connect.php");
+    // Haetaan käyttäjän ostamat liput tietokannasta
+    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$user_id' AND expired_tickets = 0");
+    if (mysqli_num_rows($ticket_query) > 0) {
+        while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
+            echo '<p>Ticket ID: ' . $ticket_data['ticket_id'] . '</p>';
+            echo '<p>Customer Group: ' . $ticket_data['customer_group'] . '</p>';
+            echo '<p>Zone: ' . $ticket_data['zone'] . '</p>';
+            echo '<p>Purchase Date: ' . $ticket_data['purchase_date'] . '</p>';
+            echo '<hr>';
+        }
+    } else {
+        echo '<p class="para">You have not bought any tickets</p>';
+    }
+    ?>
+</section>
+<section class="rsection">
+    <h2>Expired tickets</h2>
+    <?php
+    // Haetaan käyttäjän vanhentuneet liput tietokannasta
+    $expired_ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$user_id' AND expired_tickets = 1");
+    if (mysqli_num_rows($expired_ticket_query) > 0) {
+        while ($expired_ticket_data = mysqli_fetch_assoc($expired_ticket_query)) {
+            echo '<p>Ticket ID: ' . $expired_ticket_data['ticket_id'] . '</p>';
+            echo '<p>Customer Group: ' . $expired_ticket_data['customer_group'] . '</p>';
+            echo '<p>Zone: ' . $expired_ticket_data['zone'] . '</p>';
+            echo '<p>Purchase Date: ' . $expired_ticket_data['purchase_date'] . '</p>';
+            echo '<hr>';
+        }
+    } else {
+        echo '<p class="para">You have 0 expired tickets</p>';
+    }
+    ?>
+</section>
+</div>
     </main>
 
     <footer>
