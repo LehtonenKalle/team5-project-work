@@ -1,3 +1,7 @@
+<?php 
+// Avataan tämänhetkinen session.
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +17,10 @@
     
 </head>
 <body>
-    <header>
-        <nav class="nav-bar">
-            <ul class="nav-list">
-                <li><a class="nav-link" href="../index.php">Home</a></li>
-                <li><a class="nav-link" href="travelling.html">Travelling</a></li>
-                <li><a class="nav-link" href="ticket.html">Tickets</a></li>
-                <li><a class="nav-link" href="customerservice.html">Customer Service</a></li>
-                <li id="login"><a class="nav-link" id="login-link" href="login.php">Log in</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+// Sisällytetään header
+include("../parts/header.php");
+?>
     <main class="content-wrapper">
         <h1 class="title1">Tickets</h1>
 
@@ -32,7 +29,7 @@
         </section>
         <section id="sticket">
                 <h2 class="tickethead">Buy ticket</h2>
-            <form action="../php/ticket.php" method="POST">
+            <form action="../php/updateticket.php" method="POST">
             <div class="input-group">
                 <label class="l1" for="o1">Customer Group</label>
                 <select id="o1" name="customer_group" class="form-select">
@@ -55,7 +52,7 @@
                     <option value="5">A-E</option>
                 </select>
             </div>
-            <button type="submit" class="btn">Buy Ticket</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #0081d7;">Buy Ticket</button>
             </form>
         </section>
         <div class="yt">
@@ -99,11 +96,10 @@
 </div>
     </main>
 
-    <footer>
-        <p>&#169; Copyright Trip Buddies</p>
-        <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
-        <p><a href="../pages/privacy.html">Privacy</a></p>
-    </footer>
+<?php
+// Lisätään footer
+include ("../parts/footer.html");
+?>
 
 </body>
 </html>

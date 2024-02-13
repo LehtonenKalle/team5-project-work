@@ -117,7 +117,7 @@ footer * {
 }
 
 @media (max-width: 900px) {
-    .nav-list li {
+    .dropdown-btn {
         float: none;
     }
 
