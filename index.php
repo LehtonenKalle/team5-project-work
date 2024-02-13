@@ -62,6 +62,12 @@ session_start();
         </form>
     </section>
     <section id="news-section">
+        <form action="php/uploadnews.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="content" placeholder="Content" required></textarea><br>
+            <input type="file" name="image"><br>
+            <button type="submit">Submit</button>
+        </form>
         <h2 id="news-heading">News</h2>
         <div class="article-box">
             <div class="img-container">
