@@ -39,11 +39,8 @@ $id = $_SESSION["id"];
     <label for='tunnus'>Username:</label>
     <input type='text' class='form-control' placeholder='Enter Username' <?php echo "value=$username";?> name='tunnus' id='tunnus' required>
 
-    <label for='salasana'>Password:</label>
-    <input type='password' class='form-control' placeholder='Enter Password' name='salasana' id='salasana' required>
-
-    <label for='salasana-uudelleen'>Repeat Password:</label>
-    <input type='password' class='form-control' placeholder='Repeat Password' name='salasana-uudelleen' id='salasana-uudelleen' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters' required>
+    <label for='salasana'>Type your password to confirm:</label>
+    <input type='password' class='form-control' placeholder='Enter Password' name='salasana' id='salasana' title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
   </div>
   <button type='submit' class='btn'>Save Changes</button>
 </form>
