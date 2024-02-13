@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include("connect.php");
 
         // Tiedon tallennus
-        $target_dir = "images/";
+        $target_dir = "../images/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -33,25 +33,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($uploadOk == 0) {
             print "Virhe tiedostoa ei ladattu.";
         } else {
-            // Yritetään ladata tiedot
+            // Yritetään ladata tiedosto
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                // lataus onnistuu ja laitetaan tiedot tietokantaan
+                // lataus onnistui joten laitetaan se tietokantaan
                 $title = $_POST["title"];
                 $content = $_POST["content"];
-                $image_url = $target_file;
+                $image_data = file_get_contents($_FILES["image"]["tmp_name"]);
 
-                $sql = "INSERT INTO news (title, content, image_url) VALUES ('$title', '$content', '$image_url')";
-                if ($yhteys->query($sql) === TRUE) {
+                $sql = "INSERT INTO news (title, content, image_data) VALUES (?, ?, ?)";
+                $stmt = $yhteys->prepare($sql);
+                $stmt->bind_param("sss", $title, $content, $image_data);
+
+                if ($stmt->execute()) {
                     print "Onnistunut tiedon lataus.";
                 } else {
-                    print "Error: " . $sql . "<br>" . $yhteys->error;
+                    print "Error: " . $sql . "<br>" . $stmt->error;
                 }
+
+                $stmt->close();
             } else {
                 print "Virhe tietoa ladatessa.";
             }
         }
 
-        // suljetaan yhteys
+        // Suljetaan yhteys
         $yhteys->close();
     } else {
         print "Täytä kaikki kentät.";
