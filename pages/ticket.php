@@ -52,7 +52,7 @@ include("../parts/header.php");
                     <option value="5">A-E</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #0081d7;">Buy Ticket</button>
+            <button type="submit" class="btn btn-primary" style="background-color: auto;">Buy Ticket</button>
             </form>
         </section>
         <div class="yt">
@@ -100,6 +100,3 @@ include("../parts/header.php");
 // Lisätään footer
 include ("../parts/footer.html");
 ?>
-
-</body>
-</html>

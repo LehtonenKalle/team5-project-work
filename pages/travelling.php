@@ -1,3 +1,7 @@
+<?php 
+// Avataan tämänhetkinen session.
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +15,9 @@
     <link rel="stylesheet" href="../css/travelling.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-bar">
-            <ul class="nav-list">
-                <li><a class="nav-link" href="../index.php">Home</a></li>
-                <li><a class="nav-link" href="travelling.html">Travelling</a></li>
-                <li><a class="nav-link" href="ticket.html">Tickets</a></li>
-                <li><a class="nav-link" href="customerservice.html">Customer Service</a></li>
-                <li id="login"><a class="nav-link" id="login-link" href="login.php">Log in</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php
+include ("../parts/header.php");
+?>
     <main>
         <h1>Travelling</h1>
         <section id="groups-section">
@@ -61,10 +57,8 @@
             </div>
         </section>
     </main>
-    <footer>
-        <p>&#169; Copyright Trip Buddies</p>
-        <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
-        <p><a href="../pages/privacy.html">Privacy</a></p>
-    </footer>
+<?php
+include ("../parts/footer.html");
+?>
 </body>
 </html>

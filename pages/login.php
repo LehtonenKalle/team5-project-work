@@ -1,3 +1,7 @@
+<?php 
+// Avataan tämänhetkinen session.
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +17,9 @@
     <title>Trip Buddies - Login here</title>
 </head>
 <body>
-    <?php 
-    include ("../parts/header.php");
-    ?>
+<?php
+include("../parts/header.php");
+?>
     <form class="form">
         <h1>Login Here</h1>
         <p id="result"></p>
@@ -33,13 +37,8 @@
         </label>
         </div>
              <button type="submit" class="btn" onclick="sendUser(this.form);">Submit</button>
-             <p>Dont have an account? <a class="here" href="register.html">Register</a></p>
+             <p>Dont have an account? <a class="here" href="register.php">Register</a></p>
     </form>
-    <footer>
-        <p>&#169; Copyright Trip Buddies</p>
-        <p><a href="../pages/termsofuse.html">Terms of Use</a></p>
-        <p><a href="../pages/privacy.html">Privacy</a></p>
-    </footer>
-    
-</body>
-</html>
+<?php 
+include("../parts/footer.html");
+?>

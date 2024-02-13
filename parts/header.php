@@ -3,7 +3,7 @@
       <ul class="nav-list">
           <li><a class="nav-link" href="../index.php">Home</a></li>
           <li><a class="nav-link" href="travelling.html">Travelling</a></li>
-          <li><a class="nav-link" href="ticket.html">Tickets</a></li>
+          <li><a class="nav-link" href="ticket.php">Tickets</a></li>
           <li><a class="nav-link" href="customerservice.html">Customer Service</a></li>
           <li id="login">
               <?php 

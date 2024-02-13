@@ -21,9 +21,9 @@ session_start();
     <nav class="nav-bar">
         <ul class="nav-list">
             <li><a class="nav-link" href="index.php">Home</a></li>
-            <li><a class="nav-link" href="pages/travelling.html">Travelling</a></li>
+            <li><a class="nav-link" href="pages/travelling.php">Travelling</a></li>
             <li><a class="nav-link" href="pages/ticket.php">Tickets</a></li>
-            <li><a class="nav-link" href="pages/customerservice.html">Customer Service</a></li>
+            <li><a class="nav-link" href="pages/customerservice.php">Customer Service</a></li>
             <li id="login">
                 <?php 
                 if (isset($_SESSION["tunnus"])) {
@@ -68,7 +68,7 @@ session_start();
             <input type="file" name="image"><br>
             <button type="submit">Submit</button>
         </form>
-        <?php include("php/shownews.php"); ?>
+        <?php //include("php/shownews.php"); ?>
         <h2 id="news-heading">News</h2>
         <div class="article-box">
             <div class="img-container">
