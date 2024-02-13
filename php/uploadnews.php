@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Sallitaan tietyt tiedosto tyypit
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $imageFileType = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
         print "Vain JPG, JPEG, PNG & GIF tiedostos sallittuja.";
         $uploadOk = 0;
@@ -30,7 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Jatketaan jos kaikki on ok
     if ($uploadOk == 1) {
+        $image_url = 'uploads/' . uniqid() . '_' . $_FILES["image"]["name"];
             // Laitetaan tiedosto tietokantaan
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $image_url)){
+            
             $title = $_POST["title"];
             $content = $_POST["content"];
 
@@ -51,5 +54,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         print "Valitettavasti tiedostoasi ei ladattu.";
     }
 
-
+}
 ?>

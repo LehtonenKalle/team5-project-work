@@ -68,6 +68,7 @@ session_start();
             <input type="file" name="image"><br>
             <button type="submit">Submit</button>
         </form>
+        <?php include("php/shownews.php"); ?>
         <h2 id="news-heading">News</h2>
         <div class="article-box">
             <div class="img-container">
