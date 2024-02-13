@@ -22,7 +22,7 @@ session_start();
         <ul class="nav-list">
             <li><a class="nav-link" href="index.php">Home</a></li>
             <li><a class="nav-link" href="pages/travelling.html">Travelling</a></li>
-            <li><a class="nav-link" href="pages/ticket.html">Tickets</a></li>
+            <li><a class="nav-link" href="pages/ticket.php">Tickets</a></li>
             <li><a class="nav-link" href="pages/customerservice.html">Customer Service</a></li>
             <li id="login">
                 <?php 
@@ -68,6 +68,7 @@ session_start();
             <input type="file" name="image"><br>
             <button type="submit">Submit</button>
         </form>
+        <?php include("php/shownews.php"); ?>
         <h2 id="news-heading">News</h2>
         <div class="article-box">
             <div class="img-container">
