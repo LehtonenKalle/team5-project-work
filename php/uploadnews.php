@@ -39,15 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $title = $_POST["title"];
                 $content = $_POST["content"];
                 $image_data = file_get_contents($_FILES["image"]["tmp_name"]);
-                $image_data_encoded = base64_encode($image_data);
 
                 $sql = "INSERT INTO news (title, content, image_data) VALUES (?, ?, ?)";
                 $stmt = $yhteys->prepare($sql);
-                $stmt->bind_param("sss", $title, $content, $image_data_encoded);
+                $stmt->bind_param("sss", $title, $content, $image_data);
 
                 if ($stmt->execute()) {
                     print "Onnistunut tiedon lataus.";
-                    header("Location: ../index.php");
+                    header("Location: shownews.php");
                 } else {
                     print "Error: " . $sql . "<br>" . $stmt->error;
                 }
