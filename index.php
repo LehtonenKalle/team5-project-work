@@ -126,6 +126,9 @@ session_start();
                 <button type="button" class="btn btn-secondary">Read More</button>
             </article>
         </div>
+        <?php 
+        include ("../php/shownews.php");
+        ?>
     </section>
 </main>
 <?php
