@@ -43,7 +43,6 @@ if(isset($_SESSION["tunnus"])) {
 
         // Ohjataan käyttäjä takaisin lippusivulle
         header("Location:../pages/ticket.php");
-        exit();
 
         // Tarkistetaan ja päivitetään vanhentuneet liput
         $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$user_id' AND expired_tickets = 0");
