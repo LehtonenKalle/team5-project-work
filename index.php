@@ -1,4 +1,5 @@
 <?php 
+// Aloitetaan tämänhetkiset sessionit
 session_start();
 ?>
 <!DOCTYPE html>
@@ -42,6 +43,7 @@ session_start();
 </header>
 <main>
     <?php
+    // Jos session löytyy, tulostetaan tervetuliaisviesti.
     if (isset($_SESSION["tunnus"])) {
         print "<h1>Welcome ".$_SESSION["tunnus"]."!</h1>\n";
     } 
@@ -63,13 +65,23 @@ session_start();
     </section>
     <section id="news-section">
         <h2 id="news-heading">News</h2>
-        <form action="php/uploadnews.php" method="post" enctype="multipart/form-data" style="text-align: center; width: 60%; margin: 50px auto 0 auto; padding: 20px; background-color: #FFFFFF; border-radius: 5px;">
-            <h3 style="padding-bottom: 10px;">Add a new article below:</h3>
-            <input class="form-control" type="text" name="title" placeholder="Title" required style="margin: 5px auto 5px auto; width: 75%"><br>
-            <textarea class="form-control" name="content" placeholder="Content" required style="margin: 5px auto 5px auto; width: 75%; height: 200px"></textarea><br>
-            <input type="file" name="image" style="margin: 5px; width: 75%"><br>
-            <button class="btn btn-primary" type="submit" style="margin: 5px; width: 20%; background-color: #00568F;">Submit</button>
-        </form>
+        <?php 
+        // Tulostetaan lomake uusille uutisille vain jos käyttäjä on kirjautuneena "root" -käyttäjälle.
+        if ($_SESSION["tunnus"] == "Admin") {
+            print
+            '<form action="php/uploadnews.php" method="post" enctype="multipart/form-data" style="text-align: center; width: 60%; margin: 50px auto 0 auto; padding: 20px; background-color: #FFFFFF; border-radius: 5px;">
+                <h3 style="padding-bottom: 10px;">Add a new article below:</h3>
+                <input class="form-control" type="text" name="title" placeholder="Title" required style="margin: 5px auto 5px auto; width: 75%"><br>
+                <textarea class="form-control" name="content" placeholder="Content" required style="margin: 5px auto 5px auto; width: 75%; height: 200px"></textarea><br>
+                <input type="file" name="image" style="margin: 5px; width: 75%"><br>
+                <button class="btn btn-primary" type="submit" style="margin: 5px; width: 20%; background-color: #00568F;">Submit</button>
+            </form>';
+        }
+        ?>
+        <?php 
+        // Lisätään shownews.php, joka päivittää automaattisesti uudet uutiset näkyviin
+        include ("php/shownews.php");
+        ?>
         <div class="article-box">
             <div class="img-container">
                 <img src="images/redbus.jpg" class="img-thumbnail" alt="red bus in wilderness">
@@ -127,9 +139,6 @@ session_start();
                 <button type="button" class="btn btn-secondary">Read More</button>
             </article>
         </div>
-        <?php 
-        include ("php/shownews.php");
-        ?>
     </section>
 </main>
 <?php

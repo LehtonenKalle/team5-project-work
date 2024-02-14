@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // lataus onnistui joten laitetaan se tietokantaan
                 $title = $_POST["title"];
                 $content = $_POST["content"];
-                $image_data = file_get_contents($_FILES["image"]["tmp_name"]);
+                // Laitetaan $image_data-muuttujaan oikea tiedostopolku, 
+                // jotta kuvan lataaminen selaimeen toimii index.php:ssä
+                $image_data = "images/".basename($_FILES["image"]["name"]);
 
                 $sql = "INSERT INTO news (title, content, image_data) VALUES (?, ?, ?)";
                 $stmt = $yhteys->prepare($sql);
@@ -46,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmt->execute()) {
                     print "Onnistunut tiedon lataus.";
-                    header("Location: shownews.php");
+                    header("Location: ../index.php");
                 } else {
                     print "Error: " . $sql . "<br>" . $stmt->error;
                 }
