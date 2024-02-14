@@ -15,6 +15,7 @@ $id = $_SESSION["id"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/ticket.css">
+    <link rel="stylesheet" href="../css/ticketvalikko.css">
     <title>Ticket page - Buy your tickets</title>
 </head>
 <body>
@@ -56,42 +57,55 @@ include("../parts/header.php");
         <button type="submit" class="btn btn-primary" style="background-color: auto;">Buy Ticket</button>
         </form>
     </section>
-    <div class="yt">
-<section class="lsection">
-<h2>Your tickets</h2>
+    <section class="lsection">
+    <h2 onclick="toggleDropdown('yourTicketsDropdown')">Your tickets</h2>
+    <select class="tickets-dropdown" id="yourTicketsDropdown">
 
-<?php
+    <?php
 include ("../php/connect.php");
-// Haetaan käyttäjän ostamat liput tietokannasta
-$ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
-if (mysqli_num_rows($ticket_query) > 0) {
+
+    // Haetaan käyttäjän ostamat liput tietokannasta
+    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
+
+    if (mysqli_num_rows($ticket_query) > 0) {
+    echo '<option value="" disabled selected>Select a ticket</option>'; // Tyhjä valinta oletuksena
     while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
-        echo '<p>Customer Group: ' . $ticket_data['customer_group'] . '</p>';
-        echo '<p>Zone: ' . $ticket_data['zone'] . '</p>';
-        echo '<p>Purchase Date: ' . $ticket_data['purchase_date'] . '</p>';
-        echo '<hr>';
+        echo '<option value="' . $ticket_data['ticket_id'] . '">';
+        echo 'Customer Group: ' . $ticket_data['customer_group'] . ', ';
+        echo 'Zone: ' . $ticket_data['zone'] . ', ';
+        echo 'Purchase Date: ' . $ticket_data['purchase_date'];
+        echo '</option>';
     }
 } else {
-    echo '<p class="para">You have not bought any tickets</p>';
+    echo '<option value="" disabled selected>No tickets found</option>'; // Ilmoitus, jos käyttäjällä ei ole lippuja
 }
 ?>
+ </select>
 </section>
+
 <section class="rsection">
-    <h2>Expired tickets</h2>
+    <h2 onclick="toggleDropdown('expiredTicketsDropdown')">Expired tickets</h2>
+    <select class="tickets-dropdown" id="expiredTicketsDropdown">
     <?php
     // Haetaan käyttäjän vanhentuneet liput tietokannasta
     $expired_ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 1");
+
     if (mysqli_num_rows($expired_ticket_query) > 0) {
-        while ($expired_ticket_data = mysqli_fetch_assoc($expired_ticket_query)) {
-            echo '<p>Customer Group: ' . $expired_ticket_data['customer_group'] . '</p>';
-            echo '<p>Zone: ' . $expired_ticket_data['zone'] . '</p>';
-            echo '<p>Purchase Date: ' . $expired_ticket_data['purchase_date'] . '</p>';
-            echo '<hr>';
-        }
-    } else {
-        echo '<p class="para">You have 0 expired tickets</p>';
+    echo '<option value="" disabled selected>Select an expired ticket</option>'; // Tyhjä valinta oletuksena
+    while ($expired_ticket_data = mysqli_fetch_assoc($expired_ticket_query)) {
+        echo '<option value="' . $expired_ticket_data['ticket_id'] . '">';
+        echo 'Customer Group: ' . $expired_ticket_data['customer_group'] . ', ';
+        echo 'Zone: ' . $expired_ticket_data['zone'] . ', ';
+        echo 'Purchase Date: ' . $expired_ticket_data['purchase_date'];
+        echo '</option>';
     }
-    ?>
+} else {
+    echo '<option value="" disabled selected>No expired tickets found</option>'; // Ilmoitus, jos käyttäjällä ei ole vanhentuneita lippuja
+}
+?>
+     </select>
+    </section>
+     <script src="../js/ticket.js"></script>
 <?php
     // Tarkistetaan ja päivitetään vanhentuneet liput
     $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
