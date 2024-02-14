@@ -62,10 +62,9 @@ include("../parts/header.php");
     <?php
     include ("../php/connect.php");
     // Haetaan käyttäjän ostamat liput tietokannasta
-    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id'");
+    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
     if (mysqli_num_rows($ticket_query) > 0) {
         while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
-            echo '<p>Ticket ID: ' . $ticket_data['ticket_id'] . '</p>';
             echo '<p>Customer Group: ' . $ticket_data['customer_group'] . '</p>';
             echo '<p>Zone: ' . $ticket_data['zone'] . '</p>';
             echo '<p>Purchase Date: ' . $ticket_data['purchase_date'] . '</p>';
@@ -80,10 +79,9 @@ include("../parts/header.php");
     <h2>Expired tickets</h2>
     <?php
     // Haetaan käyttäjän vanhentuneet liput tietokannasta
-    $expired_ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE tunnus = '$tunnus' AND expired_tickets = 1");
+    $expired_ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 1");
     if (mysqli_num_rows($expired_ticket_query) > 0) {
         while ($expired_ticket_data = mysqli_fetch_assoc($expired_ticket_query)) {
-            echo '<p>Ticket ID: ' . $expired_ticket_data['ticket_id'] . '</p>';
             echo '<p>Customer Group: ' . $expired_ticket_data['customer_group'] . '</p>';
             echo '<p>Zone: ' . $expired_ticket_data['zone'] . '</p>';
             echo '<p>Purchase Date: ' . $expired_ticket_data['purchase_date'] . '</p>';
