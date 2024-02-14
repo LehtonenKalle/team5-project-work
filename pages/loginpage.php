@@ -37,7 +37,7 @@ include("../parts/header.php");
         </label>
         </div>
              <button type="submit" class="btn" onclick="sendUser(this.form);">Submit</button>
-             <p>Dont have an account? <a class="here" href="register.php">Register</a></p>
+             <p>Dont have an account? <a class="here" href="registerpage.php">Register</a></p>
     </form>
 <?php 
 include("../parts/footer.html");

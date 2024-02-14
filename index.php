@@ -28,13 +28,13 @@ session_start();
             <li id="login">
                 <?php 
                 if (isset($_SESSION["tunnus"])) {
-                    print "<button class='dropdown-btn' href='pages/login.html'>".$_SESSION["tunnus"]."</button>". 
+                    print "<button class='dropdown-btn' href='pages/loginpage.php'>".$_SESSION["tunnus"]."</button>". 
                     "<div class='dropdown-content'>
                         <a href='pages/profile.php'>Profile</a>
                         <a href='php/logout.php'>Log out</a>
                     </div>";
                 } else {
-                    print "<a class='nav-link' id='login-link' href='pages/login.php'>Log in</a>";
+                    print "<a class='nav-link' id='login-link' href='pages/loginpage.php'>Log in</a>";
                 }
                 ?>
             </li>
@@ -66,7 +66,7 @@ session_start();
     <section id="news-section">
         <h2 id="news-heading">News</h2>
         <?php 
-        // Tulostetaan lomake uusille uutisille vain jos käyttäjä on kirjautuneena "root" -käyttäjälle.
+        // Tulostetaan lomake uusille uutisille vain jos käyttäjä on kirjautuneena "Admin" -käyttäjälle.
         if ($_SESSION["tunnus"] == "Admin") {
             print
             '<form action="php/uploadnews.php" method="post" enctype="multipart/form-data" style="text-align: center; width: 60%; margin: 50px auto 0 auto; padding: 20px; background-color: #FFFFFF; border-radius: 5px;">
@@ -141,6 +141,10 @@ session_start();
         </div>
     </section>
 </main>
-<?php
-include ("parts/footer.html");
-?>
+<footer>
+  <p>&#169; Copyright Trip Buddies</p>
+  <p><a href="pages/termsofuse.php">Terms of Use</a></p>
+  <p><a href="pages/privacy.php">Privacy</a></p>
+</footer>
+</body>
+</html>

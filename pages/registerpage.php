@@ -39,7 +39,7 @@ include ("../parts/header.php");
       </div>
       <button type="submit" class="btn">Register</button>
       <div class="container signin">
-        <p>Already have an account? <a class="here" href="login.php">Sign in</a>.</p>
+        <p>Already have an account? <a class="here" href="loginpage.php">Sign in</a>.</p>
       </div>
     </form>
     <?php
