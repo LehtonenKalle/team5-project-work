@@ -34,19 +34,6 @@ if(isset($_SESSION["tunnus"])) {
         // Ohjataan käyttäjä takaisin lippusivulle
         header("Location:../pages/ticket.php");
 
-        // Tarkistetaan ja päivitetään vanhentuneet liput
-        $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
-        while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
-            $ticket_id = $ticket_data['ticket_id'];
-            $purchase_date = strtotime($ticket_data['purchase_date']);
-            $expiration_date = strtotime('+60 seconds', $purchase_date); // Lisätään 24 tuntia ostopäivämäärään
-            if (time() > $expiration_date) {
-                mysqli_query($yhteys, "UPDATE tickets SET expired_tickets = 1 WHERE ticket_id = '$ticket_id'");
-            }
-        }
-        
-        // Ohjataan käyttäjä takaisin kotisivulle
-        header("Location:../index.php");
         exit();
     } else {
         // Jos lomakkeelta puuttuu tietoja, ohjaa takaisin lippusivulle
