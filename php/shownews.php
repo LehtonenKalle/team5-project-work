@@ -22,5 +22,5 @@ if ($result->num_rows > 0) {
     print "Ei uutisia.";
 }
 
-$yhteys->close();
+//$yhteys->close();
 ?>
