@@ -1,0 +1,7 @@
+.tickets-dropdown {
+    display: none;
+}
+
+.tickets-dropdown.show {
+    display: block;
+}
