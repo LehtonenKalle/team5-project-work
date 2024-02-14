@@ -39,7 +39,7 @@ if(isset($_SESSION["tunnus"])) {
         while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
             $ticket_id = $ticket_data['ticket_id'];
             $purchase_date = strtotime($ticket_data['purchase_date']);
-            $expiration_date = strtotime('+1 minutes', $purchase_date); // Lisätään 24 tuntia ostopäivämäärään
+            $expiration_date = strtotime('+60 seconds', $purchase_date); // Lisätään 24 tuntia ostopäivämäärään
             if (time() > $expiration_date) {
                 mysqli_query($yhteys, "UPDATE tickets SET expired_tickets = 1 WHERE ticket_id = '$ticket_id'");
             }
