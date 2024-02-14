@@ -1,6 +1,8 @@
 <?php 
-// Avataan tämänhetkinen session.
-session_start()
+// Avataan tämänhetkiset sessionit.
+session_start();
+// Tallennetaan id-session $id muuttujaan
+$id = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +16,6 @@ session_start()
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/ticket.css">
     <title>Ticket page - Buy your tickets</title>
-    
 </head>
 <body>
 <?php 
@@ -61,7 +62,7 @@ include("../parts/header.php");
     <?php
     include ("../php/connect.php");
     // Haetaan käyttäjän ostamat liput tietokannasta
-    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE tunnus = '$tunnus' AND expired_tickets = 0");
+    $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id'");
     if (mysqli_num_rows($ticket_query) > 0) {
         while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
             echo '<p>Ticket ID: ' . $ticket_data['ticket_id'] . '</p>';

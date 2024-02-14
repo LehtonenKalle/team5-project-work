@@ -6,19 +6,9 @@ if(isset($_SESSION["tunnus"])) {
     include("../php/connect.php");
     // Käyttäjä on kirjautunut sisään, tallennetaan lippu
     // Haetaan käyttäjän ID tietokannasta
-    $tunnus = $_SESSION["tunnus"];
-    $user_query = mysqli_query($yhteys, "SELECT id FROM kayttaja WHERE tunnus = '$tunnus'");
-    if(mysqli_num_rows($user_query) > 0) {
-        // Käyttäjän tunnus löytyi tietokannasta, haetaan ID ja asetetaan se muuttujaan
-        $user_data = mysqli_fetch_assoc($user_query);
-        $user_id = $user_data['id'];
-    } else {
-        // Käyttäjän tunnusta ei löytynyt tietokannasta, käsittele virhe asianmukaisesti
-        echo "Virhe: Käyttäjän ID:tä ei löydy.";
-        exit(); // Lopetetaan suoritus virheen kohdalla
-    }
+    $id = $_SESSION["id"];
 
-    if (!isset($user_id) || empty($user_id)) {
+    if (empty($id)) {
         echo "Virheellinen käyttäjä-ID: Tarkista, että käyttäjä on kirjautunut sisään ja että käyttäjä-ID on määritelty oikein.";
         exit(); // Lopeta suoritus, jos käyttäjä-ID puuttuu tai on virheellinen
     }
