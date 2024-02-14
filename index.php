@@ -127,7 +127,6 @@ session_start();
             </article>
         </div>
         <?php 
-        include ("php/connect.php");
         include ("php/shownews.php");
         ?>
     </section>

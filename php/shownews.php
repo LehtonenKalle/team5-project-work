@@ -1,4 +1,5 @@
 <?php
+include ("connect.php");
 // Hakee databasesta tiedon
 $sql = "SELECT * FROM news ORDER BY id DESC";
 $result = $yhteys->query($sql);
