@@ -12,7 +12,9 @@ if ($result->num_rows > 0) {
         print "<h2>" . $row["title"] . "</h2>";
         print "<p>" . $row["content"] . "</p>";
         if ($row["image_url"]) {
-            print "<img src='" . $row["image_url"] . "' alt='Post Image'>";
+            $imageData = base64_encode($row["image_data"]);
+            $src = 'data:image/' . $row["image_type"] . 'base64,' . $image_data;
+            print "<img src='" . $src . "' alt='Post Image'>";
         }
         print "<hr>";
     }
