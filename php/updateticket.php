@@ -28,18 +28,18 @@ if(isset($_SESSION["tunnus"])) {
         // Tallennetaan lippu tietokantaan käyttäjän id:n kanssa
         $sql = "INSERT INTO tickets (user_id, customer_group, zone) VALUES (?, ?, ?)";
         $stmt = $yhteys->prepare($sql);
-        $stmt->bind_param("iss", $user_id, $customer_group, $zone);
+        $stmt->bind_param("iss", $id, $customer_group, $zone);
         $stmt->execute();
 
         // Ohjataan käyttäjä takaisin lippusivulle
         header("Location:../pages/ticket.php");
 
         // Tarkistetaan ja päivitetään vanhentuneet liput
-        $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$user_id' AND expired_tickets = 0");
+        $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
         while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
             $ticket_id = $ticket_data['ticket_id'];
             $purchase_date = strtotime($ticket_data['purchase_date']);
-            $expiration_date = strtotime('+24 hours', $purchase_date); // Lisätään 24 tuntia ostopäivämäärään
+            $expiration_date = strtotime('+1 minutes', $purchase_date); // Lisätään 24 tuntia ostopäivämäärään
             if (time() > $expiration_date) {
                 mysqli_query($yhteys, "UPDATE tickets SET expired_tickets = 1 WHERE ticket_id = '$ticket_id'");
             }
