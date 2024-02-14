@@ -17,6 +17,8 @@ if ($result->num_rows > 0) {
             print "<img src='" . $src . "' alt='Post Image'>";
         }
         print "<hr>";
+
+        header("Location: ../index.php");
     }
 } else {
     print "Ei uutisia.";
