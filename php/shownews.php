@@ -4,13 +4,11 @@ include ("connect.php");
 $sql = "SELECT * FROM news ORDER BY id DESC";
 $result = $yhteys->query($sql);
 
-print "<p>"."moro"."</p>";
 
 // näyttää postauksen
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        print "<h2>" . $row["title"] . "</h2>";
-        print "<p>" . $row["content"] . "</p>";
+        print "<div class='article-box'><article class='article-preview'><h3>" . $row["title"] . "</h3><p>" . $row["content"] . "</p><button type='button' class='btn btn-secondary'>Read More</button></article></div>";
         if ($row["image_data"]) {
             $src = $row["image_data"];
             print "<img src='" . $src . "' alt='Post Image'>";
