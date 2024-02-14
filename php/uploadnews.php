@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmt->execute()) {
                     print "Onnistunut tiedon lataus.";
+                    header("Location: shownews.php");
                 } else {
                     print "Error: " . $sql . "<br>" . $stmt->error;
                 }

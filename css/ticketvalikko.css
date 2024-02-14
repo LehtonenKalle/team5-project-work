@@ -1,7 +1,7 @@
 .tickets-dropdown {
-    display: none;
+    display: none; /* Alustavasti piilotetaan pudotusvalikko */
 }
 
 .tickets-dropdown.show {
-    display: block;
+    display: block; /* Kun lisätään "show" -luokka, näytetään pudotusvalikko */
 }
