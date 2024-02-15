@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         <h3>" . $row["title"] . "</h3>
         <p>" . $row["content"] . "</p>
         <button type='button' class='btn btn-secondary'>Read More</button>".
-        isAdmin()
+        isAdmin($row)
         .        
         "</article>
         </div>";
@@ -35,9 +35,10 @@ function testImage($row) {
     }
 }
 
-function isAdmin() {
+function isAdmin($row) {
     if ($_SESSION["tunnus"] == "Admin") {
-        return "<button type='button' href='deletenews.php' class='btn btn-secondary' style='margin-left: 5px;'>Delete</button>";
+        $_SESSION["news_id"] = $row["id"];
+        return "<button type='link' class='btn btn-secondary' style='margin-left: 5px; background-color: #8B0000;'><a style='text-decoration: none; color: #FFFFFF;' href='php/deletenews.php'>Delete</a></button>";
     }
 }
 ?>
