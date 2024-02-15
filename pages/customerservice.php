@@ -25,7 +25,7 @@ include ("../parts/header.php");
         <h1>Contact Us</h1>
         </div>
     <div class="column">
-        <form action="../php/email.php" method="POST">
+        <form action="../php/feedback.php" method="POST">
             <label for="firstname">First Name:</label>
             <input type="text" id="firstname" name="firstname" placeholder="Your first name">
             <label for="lastname">Last Name:</label>

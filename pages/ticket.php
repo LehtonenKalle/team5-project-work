@@ -69,8 +69,10 @@ include ("../php/connect.php");
 
     if (mysqli_num_rows($ticket_query) > 0) {
     echo '<option value="" disabled selected>Select a ticket</option>'; // Tyhjä valinta oletuksena
+    // Käydään läpi jokainen voimassa oleva lippu
     while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
         echo '<option value="' . $ticket_data['ticket_id'] . '">';
+        // Tulostetaan lipun tiedot
         echo 'Customer Group: ' . $ticket_data['customer_group'] . ', ';
         echo 'Zone: ' . $ticket_data['zone'] . ', ';
         echo 'Purchase Date: ' . $ticket_data['purchase_date'];
@@ -92,8 +94,10 @@ include ("../php/connect.php");
 
     if (mysqli_num_rows($expired_ticket_query) > 0) {
     echo '<option value="" disabled selected>Select an expired ticket</option>'; // Tyhjä valinta oletuksena
+    // Käydään läpi jokainen vanhentunut lippu
     while ($expired_ticket_data = mysqli_fetch_assoc($expired_ticket_query)) {
         echo '<option value="' . $expired_ticket_data['ticket_id'] . '">';
+        // Tulostetaan lipun tiedot
         echo 'Customer Group: ' . $expired_ticket_data['customer_group'] . ', ';
         echo 'Zone: ' . $expired_ticket_data['zone'] . ', ';
         echo 'Purchase Date: ' . $expired_ticket_data['purchase_date'];
@@ -109,10 +113,12 @@ include ("../php/connect.php");
 <?php
     // Tarkistetaan ja päivitetään vanhentuneet liput
     $ticket_query = mysqli_query($yhteys, "SELECT * FROM tickets WHERE user_id = '$id' AND expired_tickets = 0");
+    // Käydään läpi jokainen voimassa oleva lippu tarkistaaksemme niiden vanhenemisen
     while ($ticket_data = mysqli_fetch_assoc($ticket_query)) {
         $ticket_id = $ticket_data['ticket_id'];
         $purchase_date = strtotime($ticket_data['purchase_date']);
         $expiration_date = strtotime('+20 seconds', $purchase_date); // Lisätään 20 sekuntia ostopäivämäärään
+        // Jos nykyinen aika on suurempi kuin vanhentumisaika, merkitään lippu vanhentuneeksi
         if (time() > $expiration_date) {
             mysqli_query($yhteys, "UPDATE tickets SET expired_tickets = 1 WHERE ticket_id = '$ticket_id'");
         }
