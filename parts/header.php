@@ -10,7 +10,7 @@
               if (isset($_SESSION["tunnus"])) {
                   print "<button class='dropdown-btn' href='loginpage.php'>".$_SESSION["tunnus"]."</button>".
                   "<div class='dropdown-content'>
-                      <a href='#'>Profile</a>
+                      <a href='../php/editprofile.php'>Profile</a>
                       <a href='../php/logout.php'>Log out</a>
                   </div>";
               } else {

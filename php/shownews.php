@@ -14,8 +14,10 @@ if ($result->num_rows > 0) {
         <article class='article-preview'>
         <h3>" . $row["title"] . "</h3>
         <p>" . $row["content"] . "</p>
-        <button type='button' class='btn btn-secondary'>Read More</button>
-        </article>
+        <button type='button' class='btn btn-secondary'>Read More</button>".
+        isAdmin()
+        .        
+        "</article>
         </div>";
     }
 } 
@@ -30,6 +32,12 @@ function testImage($row) {
         return "<img class='img-thumbnail' src='" . $src . "' alt='Post Image'>";
     } else {
         return "<img class='img-thumbnail' src='images/redbus.jpg' alt='Red bus'>";
+    }
+}
+
+function isAdmin() {
+    if ($_SESSION["tunnus"] == "Admin") {
+        return "<button type='button' href='deletenews.php' class='btn btn-secondary' style='margin-left: 5px;'>Delete</button>";
     }
 }
 ?>
